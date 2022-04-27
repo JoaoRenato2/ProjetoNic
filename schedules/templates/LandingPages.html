@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -5,34 +6,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HomePage</title>
-    <link rel="stylesheet" href="css/landing.css">
+    <link rel="stylesheet" href="{% static 'schedules/css/landing.css' %}">
 </head>
-<body>
+<body style = "background-image: url('static/schedules/img/Slide2.PNG');" >
     <div class="container">
         <div class="panel">
             <div class="div1">
                 <span style="color: #800000;" >Agendamento</span> <span style="color: red;"> NIC</span>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse perspiciatis temporibus, <br> repudiandae ipsum cum distinctio p odio dolorum porro non, unde nesciunt consequatur <br> deleniti minus sequi et praesentium fuga alias cupiditate.</p>
                 <button class="btn-aluno"><a href="/Login_Register.html">Aluno</a></button>
-                <button class="btn-monitor"><a href="#">Monitor</a></button>
-
+                <button class="btn-monitor"><a href="#">Professor</a></button>
             </div>
-            <div class="div2">
-
+            <div style = " background-image: url('static/schedules/img/Project_70-15.jpg');" class="div2">
             </div>
             <div class="div3">
                 <nav>
                     <ul>
                         <li><a class="teste" href="#">Home</a></li>
-                        <li><a href="#">Monitores</a></li>
+                        <li><a href="#">Professor</a></li>
                         <li><a href="#">Sobre</a></li>
                         <li><a href="#">Contato</a></li>
                     </ul>
                 </nav>
-
-            </div>
-           
-
+            </div>     
         </div>
     </div>
 </body>
