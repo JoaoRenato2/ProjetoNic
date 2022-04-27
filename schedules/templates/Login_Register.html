@@ -1,0 +1,116 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+    <title>Sing in & Sing Up Form</title>
+    <link rel="stylesheet" href="{% static '/schedules/css/style.css' %}">
+</head>
+
+<body>
+    <div class="container">
+        <div class="form-container">
+            <div class="singin-signup">
+                <div class="forms-container">
+                    <div class="signin-signup">
+                        <!--Inicio do formulario de Login-->
+                        <form action="" class="sign-in-form">
+                            <h2 class="title">Entrar no NIC </h2>
+                            <div class="input-field">
+                                <i class="fas fa-user"></i>
+                                <input type="text" placeholder="Matricula">
+                            </div>
+                            <div class="input-field">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" placeholder="Senha">
+                            </div>
+                            <input type="submit" value="Login" class="btn solid">
+
+                            <p class="social-text">Ou você pode fazer login via</p>
+                            <div class="social-media">
+                                <a href="#" class="social-icon">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="social-icon">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="social-icon">
+                                    <i class="fab fa-google"></i>
+                                </a>
+                                <a href="#" class="social-icon">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                            </div>
+                        </form>
+                        <!--Fim do formulario de Login-->
+                        <!---->
+
+                        <!--Inicio do formulario de Registro-->
+                        <form action="" class="sign-up-form">
+                            <h2 class="title">Criar uma nova conta</h2>
+                            <div class="input-field">
+                                <i class="fas fa-user"></i>
+                                <input type="text" placeholder="Matricula">
+                            </div>
+                            <div class="input-field">
+                                <i class="fas fa-envelope"></i>
+                                <input type="text" placeholder="Email">
+                            </div>
+                            <div class="input-field">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" placeholder="Senha">
+                            </div>
+                            <input type="submit" value="Cadastr-se" class="btn solid">
+
+                            <p class="social-text">Ou use uma outra conta</p>
+                            <div class="social-media">
+                                <a href="#" class="social-icon">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="social-icon">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="social-icon">
+                                    <i class="fab fa-google"></i>
+                                </a>
+                                <a href="#" class="social-icon">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                            </div>
+                        </form>
+                        <!--Fim do formulario de Registro-->
+                    </div>
+                </div>
+
+                <div class="panels-container"></div>
+            </div>
+        </div>
+
+        <div class="panels-container">
+            <div class="panel left-panel">
+                <div class="content">
+                    <h3>Novo Aqui ?</h3>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut quae exercitationem quia eaque, quisquam labore consectetur qui voluptate placeat magni eum non accusantium, mollitia nulla, odit minima autem rerum rem?</p>
+                    <button class="btn trasnparent" id="sign-up-btn">Cadastra-se</button>
+                </div>
+                <img src="{% static 'schedules/img/login.svg' %}" class="image" alt="">
+            </div>
+
+            <div class="panel right-panel">
+                <div class="content">
+                    <h3>Já é um dos nossos ?</h3>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut quae exercitationem quia eaque, quisquam labore consectetur qui voluptate placeat magni eum non accusantium, mollitia nulla, odit minima autem rerum rem?</p>
+                    <button class="btn trasnparent" id="sign-in-btn">Faça o Login</button>
+                </div>
+                <img src="{% static 'schedules/img/register.svg' %}" class="image" alt="">
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'schedules/js/app.js' %}"></script>
+</body>
+
+</html>
