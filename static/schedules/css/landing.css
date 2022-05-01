@@ -1,0 +1,168 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    
+
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    height: 100%;
+    background-image: url('/schedules/static/schedules/img/Slide2.PNG');
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+
+}
+
+.panel {
+    position: relative;
+    margin: 0%;
+    top: 50px;
+    left: 40px;
+    background-color: white;
+    height: 85vh;
+    width: 95%;
+    display: flex;
+    justify-content: right;
+    border-radius: 10px;
+    -webkit-box-shadow: 5px 5px 15px 5px #000000;
+    box-shadow: 5px 5px 15px 5px #000000;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+.div1 {
+    grid-area: 2 / 1 / 5 / 3;
+    
+}
+
+.div1 span {
+    font-family: 'Anton';
+    font-size: 50px;
+    letter-spacing: 1px;
+    position: relative;
+    top: 100px;
+    left: 50px;
+}
+
+.div1 p {
+    font-family: 'Anton';
+    font-size: 14px;
+    color: rgb(163, 163, 163);
+    position: relative;
+    top: 105px;
+    left: 50px;
+
+}
+
+.div1 .btn-aluno {
+    background-color: red;
+    border: none;
+    border-radius: 20px;
+    padding: 13px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: bold;
+    position: relative;
+    top: 150px;
+    left: 160px;
+    
+}
+
+.div1 .btn-aluno a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+
+}
+
+.div1 .btn-monitor {
+    background-color: red;
+    border: none;
+    border-radius: 20px;
+    padding: 13px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: bold;
+    position: relative;
+    top: 150px;
+    left: 200px;
+    
+}
+
+.div1 .btn-monitor a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+}
+
+.div2 {
+    grid-area: 2 / 3 / 6 / 6;
+    background-image: url('/schedules/static/schedules/img/Project_70-15.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+
+}
+
+
+
+.div3 {
+    grid-area: 1 / 4 / 2 / 6;
+    
+    
+}
+
+
+nav {
+
+    height: 50px;
+    line-height: 50px;
+    position: relative;
+    width: 85%;
+    top: 20px;
+    
+}
+
+nav ul {
+    float: right;
+}
+
+nav ul li {
+    list-style-type: none;
+    display: inline-block;
+
+}
+
+nav ul li:hover {
+    background-color: #e0003a;
+    border-radius: 15px;
+
+}
+
+nav ul li a:hover {
+    color: white;
+
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #e0003a;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.teste {
+    background-color: #e0003a;
+    color: white;
+    
+}
