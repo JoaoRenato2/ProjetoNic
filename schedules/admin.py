@@ -1,3 +1,5 @@
 from django.contrib import admin
 
-# Register your models here.
+from schedules.models import Usuario
+
+admin.site.register(Usuario)

@@ -1,8 +1,11 @@
 from django.urls import path
-
-from schedules.views import home, Login_Register
+from schedules.views import Register, Login, validar_cadastro, validar_login
 
 urlpatterns = [
-    path('', home),  # Home
-    path('Login_Register.html', Login_Register),
+      # Home
+    path('cadastro/', Register, name='cadastro'),
+    path('login/', Login, name='login'),
+    path('validar_cadastro/', validar_cadastro, name='validar_cadastro'),
+    path('validar_login/', validar_login, name='validar_login'),
+    
 ]
