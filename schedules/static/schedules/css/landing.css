@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans:wght@500&family=Sora:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans:wght@500&display=swap" rel="stylesheet');
 
 * {
     padding: 0;
@@ -9,7 +11,7 @@
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Sora', sans-serif;
     height: 100%;
     background-repeat: no-repeat;
     background-size: cover;
@@ -43,25 +45,28 @@ body {
 }
 
 .div1 span {
-    font-family: 'Anton';
-    font-size: 50px;
+    font-family: 'Encode Sans';
+    font-size: 80px;
     letter-spacing: 1px;
     position: relative;
     top: 100px;
     left: 50px;
+    font-weight: bold;
 }
 
 .div1 p {
-    font-family: 'Anton';
+    font-family: 'Sora';
     font-size: 14px;
     color: rgb(163, 163, 163);
     position: relative;
     top: 105px;
     left: 50px;
+    font-weight: bold;
 
 }
 
 .div1 .btn-aluno {
+    font-family: Sora;
     background-color: red;
     border: none;
     border-radius: 20px;
@@ -84,6 +89,7 @@ body {
 }
 
 .div1 .btn-monitor {
+    font-family: Sora;
     background-color: red;
     border: none;
     border-radius: 20px;
