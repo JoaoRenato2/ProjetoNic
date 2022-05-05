@@ -14,13 +14,15 @@ body {
     overflow: hidden;
 }
 
+/* Inicio do css da sidebar */
+
 .sidebar {
     position: fixed;
-    top: 0;
+    top: 8vh;
     left: 0;
-    height: 100%;
+    height: 92%;
     width: 260px;
-    background: #99042c;
+    background: #810425;
     z-index: 100;
     transition: all 0.5s ease;
 }
@@ -83,7 +85,7 @@ body {
     border-radius: 12px;
     outline: none;
     border: none;
-    background: #c40437;
+    background: #91052b;
     padding-left: 50px;
     font-size: 18px;
     color: #fff;
@@ -131,7 +133,7 @@ body {
     position: relative;
     padding: 10px 6px;
     height: 60px;
-    background: #c40437;
+    background: #91052b;
 
 }
 
@@ -172,3 +174,33 @@ body {
     font-size: 20px;
     border-radius: 12px;
 }
+
+/* Fim do css da sidebar */
+
+/* Inicio do css da navbar */
+
+a {
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+  
+  a:hover {
+    opacity: 0.7;
+  }
+  
+  .logo {
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+    background: #580319;
+    height: 8vh;
+  }
+  
