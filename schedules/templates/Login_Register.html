@@ -7,8 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
-    <title>Sing in & Sing Up Form</title>
+    <title>Sing in Sing Up Form</title>
     <link rel="stylesheet" href="{% static '/schedules/css/style.css' %}">
+
 </head>
 
 <body>
@@ -29,7 +30,6 @@
                                 <input type="password" placeholder="Senha" name = "senha">
                             </div>
                             <input type="submit" value="Login" class="btn solid">
-
                             <p class="social-text">Ou você pode fazer login via</p>
                             <div class="social-media">
                                 <a href="#" class="social-icon">
@@ -48,9 +48,25 @@
                         </form>
                         <!--Fim do formulario de Login-->
                         <!---->
-
                         <!--Inicio do formulario de Registro-->
-                        <form action="{% url 'validar_cadastro' %}" method = "POST" class="sign-up-form">{% csrf_token %}
+                        <form id="form-cadastro" action="{% url 'validar_cadastro' %}" method = "POST" class="sign-up-form">{% csrf_token %}
+                           
+                            {% if status == '0'%}
+                                <h1 class="sucesso">Cadastro feito com sucesso.</h1>
+                            {% endif %}
+
+                            {% if status == '1'%}
+                                <h1 class="erro">Nome ou email em brancos.</h1>
+                            {% endif %}
+                            
+                            {% if status == '2'%}
+                                <h1 class="erro">O Usuário já existe</h1>   
+                            {% endif %}
+
+                            {% if status == '3'%}
+                                <h1 class="erro">Erro interno do sistema.</h1>
+                            {% endif %}
+
                             <h2 class="title">Criar uma nova conta</h2>
                             <div class="input-field">
                                 <i class="fas fa-user"></i>
@@ -64,7 +80,7 @@
                                 <i class="fas fa-lock"></i>
                                 <input type="password" placeholder="Senha" name = "senha">
                             </div>
-                            <input type="submit" value="Cadastrar" class="btn solid">
+                            <input type="submit" value="Cadastrar" id="btn_cadastro" class="btn solid">
 
                             <p class="social-text">Ou use uma outra conta</p>
                             <div class="social-media">

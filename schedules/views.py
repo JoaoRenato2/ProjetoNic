@@ -1,6 +1,10 @@
+from hashlib import sha256
+
 from django.contrib.auth import authenticate
 from django.http import HttpResponse, request
-from django.shortcuts import render, redirect
+from django.shortcuts import redirect, render
+from django.contrib import messages
+
 from schedules.models import Usuario
 
 
@@ -10,7 +14,8 @@ def home(request):
 
 
 def Login(request):
-    return render(request, 'Login_Register.html')
+    status = request.GET.get('status')
+    return render(request, 'Login_Register.html', {'status': status})
 
 
 def Register(request):
@@ -23,20 +28,21 @@ def validar_cadastro(request):
     email = request.POST.get('email')
     senha = request.POST.get('senha')
     user = Usuario.objects.filter(nome=nome)
-        
+
     if len(nome.strip()) == 0 or len(senha.strip()) == 0:
-        return HttpResponse('ola')
-        
+        return redirect('/auth/cadastro/?status=1')
+
     if len(user) > 0:
-        return redirect('Register.html/?status=1')
+        return redirect('/auth/cadastro/?status=2')
     try:
+        senha = sha256(senha.encode()).hexdigest()
         user = Usuario(nome=nome, email=email, senha=senha)
         user.save()
-        return redirect('/auth/cadastro/?status=0')
+        return redirect('/auth/index')
     except:
-        return HttpResponse('/auth/Register.html/?status=4')
-        
-        
+        return redirect('/auth/cadastro/?status=3')
+
+
 def validar_login(request):
 
     username = request.POST.get('username')
@@ -45,9 +51,10 @@ def validar_login(request):
     user_login = authenticate(username=username, password=senha)
 
     if user_login:
-        return HttpResponse('ok')
+        return render(request, 'index.html')
     else:
         return HttpResponse('usuario ou senha invalidos')
-    
 
-        
+
+def index(request):
+    return render(request, 'index.html')

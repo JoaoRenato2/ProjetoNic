@@ -84,6 +84,16 @@ form.sign-up-form{
     margin-bottom: 10px;
 }
 
+.erro{
+  background-color: #cc0338;
+  color: white;
+  border-radius: 20px;
+  width: 500px;
+  text-align: center;
+}
+
+
+
 .input-field{
     max-width: 380px;
     width: 100%;
