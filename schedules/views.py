@@ -19,7 +19,8 @@ def Login(request):
 
 
 def Register(request):
-    return render(request, 'Login_Register.html')
+    status = request.GET.get('status')
+    return render(request, 'Login_Register.html', {'status': status})
 
 
 def validar_cadastro(request):
