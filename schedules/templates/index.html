@@ -13,6 +13,11 @@
 
 <body>
   <header>
+    <div class="nav-bar">
+      <nav>
+        <a class="logo" href="/">NIC</a>
+      </nav>
+    </div>
     <div class="sidebar">
       <div class="logo_content">
         <div class="logo_book">
@@ -27,21 +32,21 @@
             <i class='bx bx-search'></i>
             <input type="text" placeholder="Procurar....">
           
-          {% comment %} <span class="tooltip">Agendamentos</span> {% endcomment %}
+          <span class="tooltip">Procurar</span>
         </li>
         <li>
           <a href="">
             <i class='bx bxs-calendar'></i>
             <span class="links_game">Agendamentos</span>
           </a>
-          {% comment %} <span class="tooltip">Agendamentos</span> {% endcomment %}
+          <span class="tooltip">Agendamentos</span>
         </li>
         <li>
           <a href="">
             <i class='bx bx-user'></i>
             <span class="links_game">Perfil</span>
           </a>
-          {% comment %} <span class="tooltip">Agendamentos</span> {% endcomment %}
+          <span class="tooltip">Perfil</span>
 
         </li>
         <li>
@@ -49,7 +54,7 @@
             <i class='bx bx-chat'></i>
             <span class="links_game">Menssagens</span>
           </a>
-          {% comment %} <span class="tooltip">Agendamentos</span> {% endcomment %}
+          <span class="tooltip">Menssagens</span>
 
         </li>
 
@@ -58,7 +63,7 @@
             <i class='bx bxs-dashboard'></i>
             <span class="links_game">Dashboard</span>
           </a>
-          {% comment %} <span class="tooltip">Agendamentos</span> {% endcomment %}
+          <span class="tooltip">Dashboard</span>
 
         </li>
 
@@ -67,14 +72,14 @@
             <i class='bx bx-calendar-exclamation'></i>
             <span class="links_game">Sobre</span>
           </a>
-          {% comment %} <span class="tooltip">Agendamentos</span> {% endcomment %}
+          <span class="tooltip">Sobre</span>
 
         </li>
       </ul>
       <div class="profile_content">
         <div class="profile">
           <div class="profile_details">
-            <img src="static/schedules/img/profile.jpg" alt="">
+            <img src="{% static '/schedules/img/profile.jpg' %}" alt="">
             <div class="name_job">
               <div class="name">Teste</div>
               <div class="job">Test</div>
@@ -84,12 +89,16 @@
         </div>
       </div>
     </div>
-    <div class="nav-bar">
-      <nav>
-        <a class="logo" href="/">NIC</a>
-      </nav>
+    <div class="home_content">
+      <div class="text">
+        Texto para teste
+      </div>
     </div>
   </header>
+  <main>
+    
+  </main>
+  <script src="{% static '/schedules/js/index.js' %}"></script>
 </body>
 
 </html>
