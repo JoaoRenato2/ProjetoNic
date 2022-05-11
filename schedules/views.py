@@ -1,3 +1,4 @@
+from audioop import reverse
 from hashlib import sha256
 
 from django.contrib.auth import authenticate
@@ -28,10 +29,15 @@ def validar_cadastro(request):
     nome = request.POST.get('username')
     email = request.POST.get('email')
     senha = request.POST.get('senha')
-    user = Usuario.objects.filter(nome=nome)
+    """ user = Usuario.objects.filter(nome=nome) """
+    senha = sha256(senha.encode()).hexdigest()
+    user = Usuario(nome=nome, email=email, senha=senha)
+    user.save()
+    """ return redirect('/auth/index') """
+    return HttpResponse('Usuario criado com sucesso')
 
-    if len(nome.strip()) == 0 or len(senha.strip()) == 0:
-        return redirect('/auth/cadastro/?status=1')
+    """ if len(nome.strip()) == 0 or len(email.strip()) == 0:
+        return redirect('/auth/cadastro/?status=1', '#form-cadastro')
 
     if len(user) > 0:
         return redirect('/auth/cadastro/?status=2')
@@ -41,7 +47,7 @@ def validar_cadastro(request):
         user.save()
         return redirect('/auth/index')
     except:
-        return redirect('/auth/cadastro/?status=3')
+        return redirect('/auth/cadastro/?status=3') """
 
 
 def validar_login(request):

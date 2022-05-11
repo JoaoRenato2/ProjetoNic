@@ -94,6 +94,30 @@ form.sign-up-form{
   margin-bottom: 10px;
 }
 
+.erro-name{
+  background: #f8d7da;
+  color: #721c24;
+  border-radius: 5px;
+  padding: 8px 10px;
+  text-align: center;
+  width: 55%;
+  margin-bottom: 10px;
+  opacity: 0;
+}
+
+.erro-name.active{
+  background: #f8d7da;
+  color: #721c24;
+  border-radius: 5px;
+  padding: 8px 10px;
+  text-align: center;
+  width: 55%;
+  margin-bottom: 10px;
+  opacity: 1;
+}
+
+
+
 
 
 .input-field{

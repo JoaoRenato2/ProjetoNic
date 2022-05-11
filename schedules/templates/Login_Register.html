@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery-3.6.0.min.js"></script>
     <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
     <title>Sing in Sing Up Form</title>
     <link rel="stylesheet" href="{% static '/schedules/css/style.css' %}">
@@ -49,9 +50,10 @@
                         <!--Fim do formulario de Login-->
                         <!---->
                         <!--Inicio do formulario de Registro-->
+                        <a name="form-anchor"></a>
                         <form id="form-cadastro" action="{% url 'validar_cadastro' %}" method = "POST" class="sign-up-form">{% csrf_token %}
-                           
-                            {% if status == '0'%}
+                            <h2 id='success' ></h2>
+                            {% comment %} {% if status == '0'%}
                                 <h1 class="sucesso">Cadastro feito com sucesso.</h1>
                             {% endif %}
 
@@ -65,19 +67,20 @@
 
                             {% if status == '3'%}
                                 <h2 class="erro">Erro interno do sistema.</h2>
-                            {% endif %}
+                            {% endif %} {% endcomment %}
+
                             <h2 class="title">Criar uma nova conta</h2>
                             <div class="input-field">
                                 <i class="fas fa-user"></i>
-                                <input type="text" placeholder="Matricula" name = "username">
+                                <input class="Matricula_Cadastro" type="text" placeholder="Matricula" id="username" name = "username">
                             </div>
                             <div class="input-field">
                                 <i class="fas fa-envelope"></i>
-                                <input type="text" placeholder="Email" name = "email">
+                                <input class="Email_Cadastro" type="text" placeholder="Email" id="email" name = "email">
                             </div>
                             <div class="input-field">
                                 <i class="fas fa-lock"></i>
-                                <input type="password" placeholder="Senha" name = "senha">
+                                <input class="Senha_Cadastro" type="password" placeholder="Senha" id="senha" name = "senha">
                             </div>
                             
                             <button type="submit" id="btn_cadastro" class="btn solid">Cadastrar</button>
@@ -130,5 +133,25 @@
     </div>
     <script src="{% static 'schedules/js/app.js' %}"></script>
 </body>
+<script type="text/javascript">
+    $(document).on('submit', '#form-cadastro', function(e){
+        e.preventDefault();
+
+        $.ajax({
+            type:'POST';
+            url:'auth/';
+            data:{
+                name:$('#username').val(),
+                email:$('#email').val(),
+                senha:$('#senha').val(),
+                csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val(),
+            },
+            success: function(data){
+                $('#success').html(data);
+
+            }
+        });
+    });
+</script>
 
 </html>
