@@ -51,21 +51,7 @@
                         <!--Inicio do formulario de Registro-->
                         <form id="form-cadastro" action="{% url 'validar_cadastro' %}" method = "POST" class="sign-up-form">{% csrf_token %}
                            
-                            {% if status == '0'%}
-                                <h1 class="sucesso">Cadastro feito com sucesso.</h1>
-                            {% endif %}
-
-                            {% if status == '1'%}
-                                <h1 class="erro">Nome ou email em brancos.</h1>
-                            {% endif %}
                             
-                            {% if status == '2'%}
-                                <h1 class="erro">O Usuário já existe</h1>   
-                            {% endif %}
-
-                            {% if status == '3'%}
-                                <h1 class="erro">Erro interno do sistema.</h1>
-                            {% endif %}
 
                             <h2 class="title">Criar uma nova conta</h2>
                             <div class="input-field">
@@ -81,6 +67,22 @@
                                 <input type="password" placeholder="Senha" name = "senha">
                             </div>
                             <input type="submit" value="Cadastrar" id="btn_cadastro" class="btn solid">
+                            
+                            {% if status == '0'%}
+                                <h1 class="sucesso">Cadastro feito com sucesso.</h1>
+                            {% endif %}
+
+                            {% if status == '1'%}
+                                <h1 class="erro">Nome ou email em brancos.</h1>
+                            {% endif %}
+                            
+                            {% if status == '2'%}
+                                <h1 class="erro">O Usuário já existe</h1>   
+                            {% endif %}
+
+                            {% if status == '3'%}
+                                <h1 class="erro">Erro interno do sistema.</h1>
+                            {% endif %}
 
                             <p class="social-text">Ou use uma outra conta</p>
                             <div class="social-media">
