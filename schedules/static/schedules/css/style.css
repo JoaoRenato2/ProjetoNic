@@ -99,6 +99,14 @@ form.sign-up-form {
   margin-bottom: 10px;
 }
 
+.login_erro{
+  background: #f8d7da;
+  color: #721c24;
+  border-radius: 5px;
+  padding: 8px 10px;
+  text-align: center;
+  width: 55%;
+}
 
 
 .input-field {

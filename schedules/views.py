@@ -1,4 +1,5 @@
 from hashlib import sha256
+import re
 from django.contrib.auth import authenticate
 from django.contrib.auth.models import User
 from django.http import HttpResponse, request, JsonResponse
@@ -11,16 +12,24 @@ from schedules.models import Usuario
 
 # Create your views here.
 def home(request):
+    
     return render(request, 'LandingPages.html')
 
 
 def Login(request):
-    return render(request, 'Login_Register.html')
+    status = request.GET.get('status')
+    return render(request, 'Login_Register.html', {'status': status})
 
 
 def Register(request):
     
     return render(request, 'Login_Register.html')
+
+def index(request):
+    if request.session.get['usuario']:
+        return render(request, 'index.html')
+    else:
+        return redirect('auth/login/?status=2')
 
 def validar_cadastro(request):
     if request.method == 'POST':
@@ -63,14 +72,15 @@ class EmailValidationView(View):
 
 
 def validar_login(request):
-    username = request.POST.get('username')
+    matricula = request.POST.get('username')
     senha = request.POST.get('senha')
-    user_login = authenticate(username=username, senha=senha)
-    if user_login:
-        return render(request, 'index.html')
-    else:
-        return HttpResponse('usuario ou senha invalidos')
-
-
-def index(request):
-    return render(request, 'index.html')
+    usuario = Usuario.objects.filter(matricula=matricula).filter(senha = senha)
+    if len(usuario)==0:
+        return redirect('/auth/login/?status=1')
+    else: 
+        request.session['usuario'] = usuario[0].id
+        return redirect(f'/auth/index/?id_usuario={request.session["usuario"]}')
+        
+def sair(request):
+    request.session.flush()
+    return redirect('/auth/login')

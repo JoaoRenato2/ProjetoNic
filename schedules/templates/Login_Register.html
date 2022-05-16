@@ -25,6 +25,16 @@
                     <div class="signin-signup">
                         <!--Inicio do formulario de Login-->
                         <form action="{% url 'validar_login' %}" method = "POST" class="sign-in-form">{% csrf_token %}
+                            {% if status == '1' %}
+                            <div class="login_erro">
+                                <h2>Email ou senha invalidos</h2>
+                            </div>
+                            {% endif %}
+                            {% if status == '2' %}
+                            <div class="login_erro">
+                                <h2>Faça o login antes de acessar o sistema</h2>
+                            </div>
+                            {% endif %}
                             <h2 class="title">Entrar no NIC </h2>
                             <div class="input-field">
                                 <i class="fas fa-user"></i>
