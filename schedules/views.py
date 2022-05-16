@@ -1,11 +1,11 @@
-from audioop import reverse
 from hashlib import sha256
-
 from django.contrib.auth import authenticate
-from django.http import HttpResponse, request
+from django.contrib.auth.models import User
+from django.http import HttpResponse, request, JsonResponse
 from django.shortcuts import redirect, render
-from django.contrib import messages
-
+import json
+from validate_email import validate_email
+from django.views import View
 from schedules.models import Usuario
 
 
@@ -15,48 +15,57 @@ def home(request):
 
 
 def Login(request):
-    status = request.GET.get('status')
-    return render(request, 'Login_Register.html', {'status': status})
+    return render(request, 'Login_Register.html')
 
 
 def Register(request):
-    status = request.GET.get('status')
-    return render(request, 'Login_Register.html', {'status': status})
-
+    
+    return render(request, 'Login_Register.html')
 
 def validar_cadastro(request):
+    if request.method == 'POST':
+        nome = request.POST['nome']
+        matricula = request.POST['username']
+        email = request.POST['email']
+        senha = request.POST['senha']
 
-    nome = request.POST.get('username')
-    email = request.POST.get('email')
-    senha = request.POST.get('senha')
-    """ user = Usuario.objects.filter(nome=nome) """
-    senha = sha256(senha.encode()).hexdigest()
-    user = Usuario(nome=nome, email=email, senha=senha)
-    user.save()
-    """ return redirect('/auth/index') """
-    return HttpResponse('Usuario criado com sucesso')
+        if not Usuario.objects.filter(matricula=matricula).exists():
+            if not Usuario.objects.filter(email=email).exists():
+                if len(senha) < 8:
+                    return HttpResponse("A senha deve ser maior que 8 caracteres")
+                user = Usuario(nome=nome, matricula=matricula, email=email, senha=senha)
+                senha = sha256(senha.encode()).hexdigest()
+                user.save()
+                success = 'Usuario Criado com sucesso'
+                return HttpResponse(success)
 
-    """ if len(nome.strip()) == 0 or len(email.strip()) == 0:
-        return redirect('/auth/cadastro/?status=1', '#form-cadastro')
 
-    if len(user) > 0:
-        return redirect('/auth/cadastro/?status=2')
-    try:
-        senha = sha256(senha.encode()).hexdigest()
-        user = Usuario(nome=nome, email=email, senha=senha)
-        user.save()
-        return redirect('/auth/index')
-    except:
-        return redirect('/auth/cadastro/?status=3') """
+class UsernameValidationView(View):
+    def post(self, request):
+        data = json.loads(request.body)
+        username = data['username']
+        if not str(username).isalnum():
+            return JsonResponse({'username_erro': 'A matricula deve conter apenas letra e numeros'}, status=400)
+        if Usuario.objects.filter(nome=username).exists():
+            return JsonResponse({'username_erro': 'Essa matricula já existe'}, status=400)
+        return JsonResponse({'username_valid': True})
+
+
+class EmailValidationView(View):
+    def post(self, request):
+        data = json.loads(request.body)
+        email = data['email']
+        if not validate_email(email):
+            return JsonResponse({'email_erro': 'Email invalido'}, status=400)
+        if Usuario.objects.filter(email=email).exists():
+            return JsonResponse({'email_erro': 'Esse email já existe'}, status=400)
+        return JsonResponse({'email_valid': True})
 
 
 def validar_login(request):
-
     username = request.POST.get('username')
     senha = request.POST.get('senha')
-
-    user_login = authenticate(username=username, password=senha)
-
+    user_login = authenticate(username=username, senha=senha)
     if user_login:
         return render(request, 'index.html')
     else:
