@@ -18,9 +18,9 @@ body {
 
 .sidebar {
     position: fixed;
-    top: 8vh;
+    top: 0;
     left: 0;
-    height: 92%;
+    height: 100%;
     width: 78px;
     background: #810425;
     padding: 6px 14px;
@@ -269,40 +269,34 @@ body {
     left: 260px;
 }
 
-
-
-
 /* Fim do css da sidebar */
 
-/* Inicio do css da navbar */
+/* Inicio do css do conteudo index */
 
-a {
-    color: #fff;
-    text-decoration: none;
-    transition: 0.3s;
-  }
-  
-  a:hover {
-    opacity: 0.7;
-  }
-  
-  .logo {
-    font-size: 24px;
-    text-transform: uppercase;
-    letter-spacing: 4px;
-  }
-  
-  nav {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
-    background: #580319;
-    height: 8vh;
-  }
+.index-home{
+    position: relative;
+    left: 250px;
+    height: 70%;
+    width: 70%;
+}
 
-  /* Fim do css da navbar */
+.inicio-text{
+    position: relative;
+    left: 450px;
+}
 
-  /* Inicio do css do conteudo index */
+.inicio-p{
+    position: relative;
+    left: 500px;
+    font-weight: 400;
+    font-size: 65%;
+}
+
+.inicio-p2{
+    position: relative;
+    left: 550px;
+    font-weight: 400;
+    font-size: 65%;
+}
 
   

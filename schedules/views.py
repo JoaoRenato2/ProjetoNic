@@ -25,11 +25,11 @@ def Register(request):
     
     return render(request, 'Login_Register.html')
 
+
 def index(request):
-    if request.session.get['usuario']:
-        return render(request, 'index.html')
-    else:
-        return redirect('auth/login/?status=2')
+    return render(request, 'index.html')
+
+ 
 
 def validar_cadastro(request):
     if request.method == 'POST':

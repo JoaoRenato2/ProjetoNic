@@ -20,7 +20,7 @@
             <div class="singin-signup">
                 <div class="forms-container">
                     <div class="invalid_feedback invalid_feedback" style="display:none">
-                        <h2 id="success"></h2>
+                        
                     </div>
                     <div class="signin-signup">
                         <!--Inicio do formulario de Login-->
@@ -69,7 +69,7 @@
                         
                         <form id="form-cadastro"  class="sign-up-form">
                             {% csrf_token %}
-                            
+                            <h2 id="success"></h2>
                             <h2 class="title">Criar uma nova conta</h2>
                             <div class="input-field register">
                                 <i class="fas fa-user"></i>
@@ -148,7 +148,7 @@
                     csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val()
                 },
                 success: function(data){
-                    
+                    $('#success').addClass('success');
                     $('#success').html(data);
                     },
                 })

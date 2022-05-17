@@ -1,12 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Encode+Sans:wght@500&family=Sora:wght@100&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Encode+Sans:wght@500&display=swap" rel="stylesheet');
+
 
 * {
     padding: 0;
     margin: 0;
-    
+    font-family: 'Poppins', sans-serif;
 
 }
 
@@ -44,9 +42,9 @@ body {
     
 }
 
-.div1 span {
-    font-family: 'Encode Sans';
-    font-size: 80px;
+.div1 .titulo {
+    /* font-family: 'Encode Sans'; */
+    font-size: 65px;
     letter-spacing: 1px;
     position: relative;
     top: 100px;
@@ -55,118 +53,59 @@ body {
 }
 
 .div1 p {
-    font-family: 'Sora';
-    font-size: 14px;
+    /* font-family: 'Sora'; */
+    font-size: 15px;
     color: rgb(163, 163, 163);
     position: relative;
     top: 105px;
-    left: 50px;
+    left: 70px;
     font-weight: bold;
 
 }
 
-.div1 .btn-aluno {
-    font-family: Sora;
+.div1P-2{
+    position: relative;
+    left: 80px;
+}
+
+.div1 .btn-saibaMias {
+    /* font-family: Sora; */
     background-color: red;
     border: none;
-    border-radius: 20px;
-    padding: 13px 24px;
+    border-radius: 25px;
+    padding: 18px 30px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-weight: bold;
     position: relative;
     top: 150px;
-    left: 160px;
+    left: 300px;
     
 }
 
-.div1 .btn-aluno a {
+.div1 .btn-saibaMias a {
     text-decoration: none;
     color: white;
     font-size: 16px;
 
-}
-
-.div1 .btn-monitor {
-    font-family: Sora;
-    background-color: red;
-    border: none;
-    border-radius: 20px;
-    padding: 13px 24px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-weight: bold;
-    position: relative;
-    top: 150px;
-    left: 200px;
-    
-}
-
-.div1 .btn-monitor a {
-    text-decoration: none;
-    color: white;
-    font-size: 16px;
 }
 
 .div2 {
     grid-area: 2 / 3 / 6 / 6;
     background-repeat: no-repeat;
     background-size: cover;
-
-
 }
-
-
 
 .div3 {
     grid-area: 1 / 4 / 2 / 6;
-    
-    
 }
 
-
-nav {
-
-    height: 50px;
-    line-height: 50px;
+img{
     position: relative;
-    width: 85%;
-    top: 20px;
+    bottom: 15%;
+    width: 100%;
+    height: 100%;
     
 }
 
-nav ul {
-    float: right;
-}
-
-nav ul li {
-    list-style-type: none;
-    display: inline-block;
-
-}
-
-nav ul li:hover {
-    background-color: #e0003a;
-    border-radius: 15px;
-
-}
-
-nav ul li a:hover {
-    color: white;
-
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #e0003a;
-    padding: 20px;
-    border-radius: 15px;
-}
-
-.teste {
-    background-color: #e0003a;
-    color: white;
-    
-}
