@@ -85,14 +85,20 @@
       </div>
     </div>
     <div class="home_content">
-      <div class="text">
-        <div class="inicio">
-        <img class="index-home" src="{% static '/schedules/img/pana.svg' %}" alt="">
-        <h1 class="inicio-text">Calendario e Agendamentos</h1>
-        <p class="inicio-p">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos tenetur, delectus quis </p>
-        <p class="inicio-p2">quam voluptate doloremque amet doloribus.  Sed facilis, delectus, eum </p> 
-        <button placeholder="Veja Mais"></button>
-        </div>
+      <div class="panel">
+       <div class="infos">
+         <div class="icons">
+           <ul class="icons-ul ">
+             <i class="icons-l bx bx-left-arrow-alt"></i>
+             <i class="icons-l bx bx-calendar"></i>
+             <i class="icons-l dates">Maio 2022</i>
+             <i class="icons-l bx bx-right-arrow-alt"></i>
+           </ul>
+         </div>
+         <button id="schedule">+ Add New</button>
+       </div>
+       <div class="days-name"></div>
+       <div class="calendar"></div>
       </div>
     </div>
   </header>

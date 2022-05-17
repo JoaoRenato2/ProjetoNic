@@ -27,11 +27,11 @@ body {
     transition: all 0.5s ease;
 }
 
-.sidebar.active{
+.sidebar.active {
     width: 260px;
 }
 
-.sidebar .logo_content .logo_book{
+.sidebar .logo_content .logo_book {
     color: #fff;
     display: flex;
     height: 50px;
@@ -42,24 +42,24 @@ body {
     transition: all 0.5s ease;
 }
 
-.sidebar.active .logo_content .logo_book{
+.sidebar.active .logo_content .logo_book {
     opacity: 1;
     pointer-events: none;
 }
 
-.logo_content .logo_book i{
+.logo_content .logo_book i {
     font-size: 28px;
     margin-right: 5px;
 
 }
 
-.logo_content .logo_book .logo_name{
+.logo_content .logo_book .logo_name {
     font-size: 28px;
     font-weight: 400;
 
 }
 
-.sidebar #btn{
+.sidebar #btn {
     position: absolute;
     color: #fff;
     left: 40%;
@@ -72,17 +72,17 @@ body {
     transform: translateX(-50%);
 }
 
-.sidebar.active #btn{
+.sidebar.active #btn {
     left: 90%;
 
 }
 
-.sidebar ul{
+.sidebar ul {
     margin-top: 20px;
 
 }
 
-.sidebar ul li{
+.sidebar ul li {
     position: relative;
     right: 11px;
     height: 50px;
@@ -93,7 +93,7 @@ body {
     font-size: 22px;
 }
 
-.sidebar ul li .tooltip{
+.sidebar ul li .tooltip {
     position: absolute;
     height: 35px;
     width: 150px;
@@ -104,7 +104,7 @@ body {
     background: #fff;
     line-height: 35px;
     text-align: center;
-    box-shadow:0 5px 10px rgba(0, 0, 0, 0.2) ;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
     transition: 0s;
     opacity: 0;
     pointer-events: none;
@@ -112,17 +112,17 @@ body {
     font-size: 18px;
 }
 
-.sidebar.active ul li .tooltip{
+.sidebar.active ul li .tooltip {
     display: none;
 }
 
-.sidebar ul li:hover .tooltip{
+.sidebar ul li:hover .tooltip {
     transition: all 0.5s ease;
     opacity: 1;
     top: 50%;
 }
 
-.sidebar ul li input{
+.sidebar ul li input {
     position: absolute;
     height: 95%;
     width: 95%;
@@ -137,7 +137,7 @@ body {
     color: #fff;
 }
 
-.sidebar ul li .bx-search{
+.sidebar ul li .bx-search {
     position: absolute;
     z-index: 99;
     color: #fff;
@@ -145,13 +145,13 @@ body {
     transition: all 0.5 ease;
 }
 
-.sidebar ul li .bx-search:hover{
+.sidebar ul li .bx-search:hover {
     background: #fff;
     color: #11101d;
 }
 
 
-.sidebar ul li a{
+.sidebar ul li a {
     color: #fff;
     display: flex;
     align-items: center;
@@ -160,12 +160,13 @@ body {
     border-radius: 12px;
 }
 
-.sidebar ul li a:hover{
+.sidebar ul li a:hover {
     background: #fff;
     color: #11101d;
-    
+
 }
-.sidebar ul li i{
+
+.sidebar ul li i {
     height: 50px;
     min-width: 50px;
     border-radius: 12px;
@@ -174,18 +175,20 @@ body {
 
 }
 
-.sidebar .links_game{
+.sidebar .links_game {
     opacity: 0;
     pointer-events: none;
     transition: all 0.5s ease;
 
-}.sidebar.active .links_game{
+}
+
+.sidebar.active .links_game {
     opacity: 1;
     pointer-events: auto;
 
 }
 
-.sidebar .profile_content{
+.sidebar .profile_content {
     position: absolute;
     color: #fff;
     bottom: 0;
@@ -194,7 +197,7 @@ body {
 
 }
 
-.sidebar .profile_content .profile{
+.sidebar .profile_content .profile {
     position: relative;
     padding: 10px 6px;
     height: 60px;
@@ -202,7 +205,7 @@ body {
 
 }
 
-.profile_content .profile .profile_details{
+.profile_content .profile .profile_details {
     display: flex;
     align-items: center;
     opacity: 0;
@@ -210,12 +213,12 @@ body {
     transition: all 0.5s ease;
 }
 
-.sidebar.active .profile .profile_details{
+.sidebar.active .profile .profile_details {
     opacity: 1;
     pointer-events: auto;
 }
 
-.profile .profile_details img{
+.profile .profile_details img {
     height: 45px;
     width: 45px;
     object-fit: cover;
@@ -223,21 +226,21 @@ body {
 
 }
 
-.profile .profile_details .name_job{
+.profile .profile_details .name_job {
     margin-left: 10px;
 
 }
 
-.profile .profile_details .name{
+.profile .profile_details .name {
     font-size: 15px;
     font-weight: 400;
 }
 
-.profile .profile_details .job{
+.profile .profile_details .job {
     font-size: 12px;
 }
 
-.profile #log_out{
+.profile #log_out {
     position: absolute;
     left: 88%;
     bottom: 5px;
@@ -248,7 +251,10 @@ body {
     border-radius: 12px;
 }
 
-.home_content{
+.home_content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
     height: 100%;
     width: calc(100% - 78px);
@@ -257,14 +263,114 @@ body {
 
 }
 
-.home_content .text{
-    font-size: 25px;
-    font-weight: 500;
-    color: black;
-    margin: 12px;
+.home_content .panel {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    width: 90%;
+    height: 90%;
+    background-color: #fff;
+    -webkit-box-shadow: 5px 5px 15px 5px #000000;
+    box-shadow: 5px 5px 15px 5px #000000;
 }
 
-.sidebar.active ~ .home_content{
+.infos {
+    grid-area: 1 / 1 / 2 / 6;
+    height: 60%;
+    width: 100%;
+}
+
+.icons {
+    position: relative;
+    border: solid;
+    border-width: 2px;
+    border-color: rgb(233, 233, 233);
+    border-radius: 5px;
+    top: 20px;
+    left: 50px;
+    color: rgb(160, 160, 160);
+    width: 17%;
+    height: 40%;
+    text-align: center;
+    display: inline-block;
+}
+
+.bx-left-arrow-alt {
+    position: relative;
+    right: 24px;
+    width: 40px;
+    height: 37px;
+    font-size: 27px;
+    border-right: solid;
+    border-color: rgb(233, 233, 233);
+    border-width: 2px;
+    text-align: center;
+
+}
+
+.bx-right-arrow-alt {
+    position: relative;
+    left: 24px;
+    width: 40px;
+    height: 37px;
+    font-size: 27px;
+    border-left: solid;
+    border-color: rgb(233, 233, 233);
+    border-width: 2px;
+    text-align: center;
+}
+
+.bx-calendar {
+    position: relative;
+    top: 3px;
+    right: 27px;
+    font-size: 25px;
+}
+
+.dates {
+    position: relative;
+    right: 10px;
+    bottom: 3px;
+    font-size: 15px;
+}
+
+.calendar {
+    position: relative;
+    bottom: 145px;
+    height: 131%;
+    background-color: blueviolet;
+    grid-area: 3 / 1 / 6 / 6;
+}
+
+#schedule {
+    position: relative;
+    left: 980px;
+    top: 23px;
+    border: none;
+    border-radius: 5px;
+    padding: 11px 35px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    color: whitesmoke;
+    background-color: #cc0338;
+    font-size: large;
+
+}
+
+.days-name {
+    position: relative;
+    bottom: 65px;
+    background-color: aqua;
+    grid-area: 2 / 1 / 3 / 6;
+    height: 50%;
+}
+
+
+
+.sidebar.active~.home_content {
     width: calc(100% - 260px);
     left: 260px;
 }
@@ -272,31 +378,3 @@ body {
 /* Fim do css da sidebar */
 
 /* Inicio do css do conteudo index */
-
-.index-home{
-    position: relative;
-    left: 250px;
-    height: 70%;
-    width: 70%;
-}
-
-.inicio-text{
-    position: relative;
-    left: 450px;
-}
-
-.inicio-p{
-    position: relative;
-    left: 500px;
-    font-weight: 400;
-    font-size: 65%;
-}
-
-.inicio-p2{
-    position: relative;
-    left: 550px;
-    font-weight: 400;
-    font-size: 65%;
-}
-
-  
