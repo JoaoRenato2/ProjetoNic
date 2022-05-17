@@ -340,7 +340,7 @@ body {
     position: relative;
     bottom: 145px;
     height: 131%;
-    background-color: blueviolet;
+    
     grid-area: 3 / 1 / 6 / 6;
 }
 
