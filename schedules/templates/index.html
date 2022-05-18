@@ -9,6 +9,7 @@
   <title>Agendamentos Nic</title>
   <link rel="stylesheet" href="{% static '/schedules/css/HomePage.css' %}">
   <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+
 </head>
 
 <body>
@@ -85,26 +86,50 @@
       </div>
     </div>
     <div class="home_content">
-      <div class="panel">
+      <div class="panel" >
        <div class="infos">
          <div class="icons">
            <ul class="icons-ul ">
              <i class="icons-l bx bx-left-arrow-alt"></i>
              <i class="icons-l bx bx-calendar"></i>
-             <i class="icons-l dates">Maio 2022</i>
+             <i id="monthDisplay" class="icons-l dates"></i>
              <i class="icons-l bx bx-right-arrow-alt"></i>
            </ul>
          </div>
-         <button id="schedule">+ Add New</button>
+         <buttonid id="schedule">+ Add New</button>
        </div>
-       <div class="days-name"></div>
+       <div id="weekdays">
+         <div>Domingo</div>
+         <div>Segunda</div>
+         <div>Terça</div>
+         <div>Quarta</div>
+         <div>Quinta</div>
+         <div>Sexta</div>
+         <div>Sabado</div>
+       </div>
        <div id="calendar"></div>
       </div>
+    </div>
+    <div class="panel-scheudle">
+      <div class="h1">
+        <span>Add New</span>
+        <button>x</button> 
+      </div>
+      <div class="inputs-panel">
+        <label for="">Titulo</label><input type="text">
+        <label for="">Horario</label><input type="text" placeholder="dia"> <input type="text" placeholder="hora">
+        <label for="">obcervação</label><input type="text" placeholder="Add a note">
+        <label for="">Categoria</label>
+        <input type="submit">
+
+      </div>
+      
     </div>
   </header>
   <main>
   </main>
+  <script src="{% static '/schedules/js/calendar.js' %}"></script>
   <script src="{% static '/schedules/js/index.js' %}"></script>
-</body>
 
+</body>
 </html>
