@@ -7,12 +7,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Agendamentos Nic</title>
-  <link rel="stylesheet" href="{% static '/schedules/css/HomePage.css' %}">
+  <link rel="stylesheet" href="{% static '/schedules/css/scheduling.css'%}">
   <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
-
 </head>
 
-<body>
+<body">
   <header>
     <div class="sidebar">
       <div class="logo_content">
@@ -24,14 +23,14 @@
       </div>
       <ul class="nav_list">
         <li>
-
-          <i class='bx bx-search'></i>
-          <input type="text" placeholder="Procurar....">
-
+          
+            <i class='bx bx-search'></i>
+            <input type="text" placeholder="Procurar....">
+          
           <span class="tooltip">Procurar</span>
         </li>
         <li>
-          <a href="agendamento/">
+          <a href="">
             <i class='bx bxs-calendar'></i>
             <span class="links_game">Agendamentos</span>
           </a>
@@ -85,73 +84,54 @@
         </div>
       </div>
     </div>
-    <div class="home_content">
-      <div class="panel">
-        <div class="infos">
-          <div class="icons">
-            <ul class="icons-ul ">
-              <i class="icons-l bx bx-left-arrow-alt"></i>
-              <i class="icons-l bx bx-calendar"></i>
-              <i id="monthDisplay" class="icons-l dates"></i>
-              <i class="icons-l bx bx-right-arrow-alt"></i>
-            </ul>
+    <div>
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="our-team">
+              <div class="picture">
+                <img class="img-fluid" src="{% static '/schedules/img/renata.jpg' %}"">
+              </div>
+              <div class="team-content">
+                <h3 class="name">Renata Santana</h3>
+                <hr class="cardLine">
+                <ul>
+                  <li><img src="location-plus-solid-24.png" alt=""></li>
+                  <li><p class="emge">Escola de Engenharia de Minas Gerais</p></li>
+                </ul>
+                <h4 class="title">Professora e Pedagoga</h4>
+              </div>
+              <ul class="social">
+                <li><button class="buttonConsulta"><a href="form/" class="buttonClickable">Marcar consulta</a></button></li>
+              </ul>
+            </div>
           </div>
-          <buttonid id="schedule">+ Add New</button>
+              <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="our-team">
+              <div class="picture">
+                <img class="img-fluid" src="{% static '/schedules/img/rogerio.png' %}">
+              </div>
+              <div class="team-content">
+                <h3 class="name">Rogério Vieira</h3>
+                <hr class="cardLine">
+                <ul>
+                  <li><img src="location-plus-solid-24.png" alt=""></li>
+                  <li><p class="emge">Escola de Engenharia de Minas Gerais</p></li>
+                </ul>
+                <h4 class="title">Professor e Psicólogo</h4>
+              </div>
+              <ul class="social">
+                <li><button class="buttonConsulta"><a class="buttonClickable" href="form/">Marcar consulta</a></button></li>
+              </ul>
+            </div>
+          </div>
         </div>
-        <div id="weekdays">
-          <div>Domingo</div>
-          <div>Segunda</div>
-          <div>Terça</div>
-          <div>Quarta</div>
-          <div>Quinta</div>
-          <div>Sexta</div>
-          <div>Sabado</div>
-        </div>
-        <div id="calendar"></div>
-      </div>
-    </div>
-    <div class="panel-scheudle">
-      <div class="h1">
-        <span>Add New</span>
-        <button id="close-form">x</button>
-      </div>
-      <div class="inputs-panel">
-        <div class="div1"> <label for="">Nome</label><input type="text" placeholder="Escreva o seu nome"> </div>
-        <div class="div2">
-          <label for="">Categoria</label>
-          <label id="input-radio1" for="">
-            <input type="radio" name="categoria">
-            Opção2
-          </label>
-          <label id="input-radio2" for="">
-            <input type="radio" name="categoria">Opção1
-          </label>
-          <label id="input-radio3" for="">
-            <input type="radio" name="categoria">Opção3
-          </label>
-          <label id="input-radio4" for="">
-            <input type="radio" name="categoria">Opção3
-          </label>
-        </div>
-        <div class="div3"> 
-          <label for="">Horario</label>
-          <input type="text" placeholder="hora"> 
-          <input id="inputDiv3-2" type="text" placeholder="dia">           
-        </div>
-        <div class="div4"> 
-          <label for="">Obcervação</label>
-          <input type="text" placeholder="Add a note"> 
-        </div>
-        <div class="div5"> 
-          <input type="submit" placeholder="Add"> </div>
       </div>
     </div>
   </header>
   <main>
   </main>
-  <script src="{% static '/schedules/js/calendar.js' %}"></script>
   <script src="{% static '/schedules/js/index.js' %}"></script>
-
 </body>
 
 </html>

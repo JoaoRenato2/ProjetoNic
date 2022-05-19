@@ -15,19 +15,22 @@ def home(request):
     
     return render(request, 'LandingPages.html')
 
-
 def Login(request):
     status = request.GET.get('status')
     return render(request, 'Login_Register.html', {'status': status})
-
 
 def Register(request):
     
     return render(request, 'Login_Register.html')
 
-
 def index(request):
     return render(request, 'index.html')
+
+def scheduling(request):
+    return render(request, 'Scheduling.html')
+
+def form(request):
+    return render(request, 'Form.html')
 
  
 
