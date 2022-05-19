@@ -368,7 +368,6 @@ body {
 
 .bx-calendar {
     position: relative;
-
     right: 27px;
     font-size: 25px;
 }
@@ -415,11 +414,13 @@ body {
     color: whitesmoke;
     background-color: #cc0338;
     font-size: large;
+    cursor: pointer;
 
 }
 
 .panel-scheudle {
     position: absolute;
+    opacity: 0;
     top: 200px;
     left: 1250px;
     height: 100%;
@@ -429,7 +430,7 @@ body {
     margin: 0;
     background-color: gray;
     z-index: 1;
-    background-color: rgb(248, 248, 248);
+    background-color: #fff;
     height: 550px;
     width: 400px;
     -webkit-box-shadow: 5px 5px 15px 5px #000000;
@@ -437,21 +438,25 @@ body {
 
 }
 
-.h1{
+.panel-scheudle.active {
+    opacity: 1;
+}
+
+.h1 {
     background-color: #cc0338;
     height: 70px;
 }
 
-.h1 span{
+.h1 span {
     position: relative;
     top: 15px;
     left: 50px;
     font-size: large;
     color: #fff;
-    
+
 }
 
-.h1 button{
+.h1 button {
     position: relative;
     left: 290px;
     bottom: 5px;
@@ -459,6 +464,183 @@ body {
     border: none;
     font-size: 25px;
     color: aliceblue;
+    cursor: pointer;
+}
+
+.inputs-panel {
+    display: grid;
+    grid-template-columns: 0.3fr repeat(3, 1fr) 0.3fr;
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+
+}
+
+.div1 {
+    grid-area: 1 / 2 / 2 / 5;
+    color: #5f5f5f;
+    position: relative;
+    height: 70px;
+    border-bottom: solid 2px;
+    border-color: #dadada;
+
+}
+
+.div1 input {
+    position: relative;
+    left: 65px;
+    top: 15px;
+    height: 40px;
+    width: 200px;
+    border: solid 1px;
+    border-color: #dadada;
+    border-radius: 3px;
+}
+
+.div1 label {
+    position: relative;
+    top: 15px;
+
+}
+
+
+
+.div2 {
+    grid-area: 2 / 2 / 3 / 5;
+    position: relative;
+    color: #5f5f5f;
+    border-bottom: solid 2px;
+    border-color: #dadada;
+}
+
+
+#input-radio1 {
+    position: relative;
+    left: 42px;
+
+}
+
+#input-radio1 input {
+    position: relative;
+    right: 10px;
+
+}
+
+#input-radio2 {
+    position: relative;
+    left: 70px;
+}
+
+#input-radio2 input {
+    position: relative;
+    right: 10px;
+    ;
+}
+
+
+#input-radio3 {
+    position: relative;
+    right: 7px;
+    top: 25px;
+}
+
+#input-radio3 input {
+    position: relative;
+    right: 10px;
+    ;
+}
+
+#input-radio4 {
+    position: relative;
+    left: 132px;
+}
+
+#input-radio4 input {
+    position: relative;
+    right: 15px;
+    ;
+}
+
+
+.div3 {
+    grid-area: 3 / 2 / 4 / 5;
+    position: relative;
+    color: #5f5f5f;
+    border-bottom: solid 2px;
+    border-color: #dadada;
+
+
+}
+
+.div3 input{
+    position: relative;
+    left: 50px;
+    top: 15px;
+    text-align: center;
+    height: 40px;
+    width: 100px;
+    border: solid 1px;
+    border-color: #dadada;
+    border-radius: 3px;
+    
+}
+
+#inputDiv3-2{
+    position: relative;
+    left: 55px;
+}
+
+.div3 label {
+    position: relative;
+    top: 15px;
+
+}
+
+
+.div4 {
+    grid-area: 4 / 2 / 5 / 5;
+    position: relative;
+    height: 100px;
+    color: #5f5f5f;
+}
+
+.div4 input{
+    position: relative;
+    top: 10px;
+    left: 10px;
+    height: 85px;
+    width: 210px;
+    border: solid 1px;
+    border-color: #dadada;
+    border-radius: 3px;
+}
+
+.div4 label{
+    position: relative;
+    top: 13px;
+}
+
+.div5 {
+    grid-area: 5 / 2 / 6 / 5;
+    position: relative;
+    
+
+}
+
+.div5 input{
+    position: relative;
+    left: 210px;
+    top: 20px;
+    border: none;
+    border-radius: 5px;
+    padding: 11px 35px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    color: whitesmoke;
+    background-color: #cc0338;
+    font-size: large;
+    cursor: pointer;
 }
 
 .sidebar.active~.home_content {

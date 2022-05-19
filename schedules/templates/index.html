@@ -24,10 +24,10 @@
       </div>
       <ul class="nav_list">
         <li>
-          
-            <i class='bx bx-search'></i>
-            <input type="text" placeholder="Procurar....">
-          
+
+          <i class='bx bx-search'></i>
+          <input type="text" placeholder="Procurar....">
+
           <span class="tooltip">Procurar</span>
         </li>
         <li>
@@ -86,44 +86,65 @@
       </div>
     </div>
     <div class="home_content">
-      <div class="panel" >
-       <div class="infos">
-         <div class="icons">
-           <ul class="icons-ul ">
-             <i class="icons-l bx bx-left-arrow-alt"></i>
-             <i class="icons-l bx bx-calendar"></i>
-             <i id="monthDisplay" class="icons-l dates"></i>
-             <i class="icons-l bx bx-right-arrow-alt"></i>
-           </ul>
-         </div>
-         <buttonid id="schedule">+ Add New</button>
-       </div>
-       <div id="weekdays">
-         <div>Domingo</div>
-         <div>Segunda</div>
-         <div>Terça</div>
-         <div>Quarta</div>
-         <div>Quinta</div>
-         <div>Sexta</div>
-         <div>Sabado</div>
-       </div>
-       <div id="calendar"></div>
+      <div class="panel">
+        <div class="infos">
+          <div class="icons">
+            <ul class="icons-ul ">
+              <i class="icons-l bx bx-left-arrow-alt"></i>
+              <i class="icons-l bx bx-calendar"></i>
+              <i id="monthDisplay" class="icons-l dates"></i>
+              <i class="icons-l bx bx-right-arrow-alt"></i>
+            </ul>
+          </div>
+          <buttonid id="schedule">+ Add New</button>
+        </div>
+        <div id="weekdays">
+          <div>Domingo</div>
+          <div>Segunda</div>
+          <div>Terça</div>
+          <div>Quarta</div>
+          <div>Quinta</div>
+          <div>Sexta</div>
+          <div>Sabado</div>
+        </div>
+        <div id="calendar"></div>
       </div>
     </div>
     <div class="panel-scheudle">
       <div class="h1">
         <span>Add New</span>
-        <button>x</button> 
+        <button id="close-form">x</button>
       </div>
       <div class="inputs-panel">
-        <label for="">Titulo</label><input type="text">
-        <label for="">Horario</label><input type="text" placeholder="dia"> <input type="text" placeholder="hora">
-        <label for="">obcervação</label><input type="text" placeholder="Add a note">
-        <label for="">Categoria</label>
-        <input type="submit">
-
+        <div class="div1"> <label for="">Nome</label><input type="text" placeholder="Escreva o seu nome"> </div>
+        <div class="div2">
+          <label for="">Categoria</label>
+          <label id="input-radio1" for="">
+            <input type="radio" name="categoria">
+            Opção2
+          </label>
+          <label id="input-radio2" for="">
+            <input type="radio" name="categoria">Opção1
+          </label>
+          <label id="input-radio3" for="">
+            <input type="radio" name="categoria">Opção3
+          </label>
+          <label id="input-radio4" for="">
+            <input type="radio" name="categoria">Opção3
+          </label>
+        </div>
+        <div class="div3"> 
+          <label for="">Horario</label>
+          <input type="text" placeholder="hora"> 
+          <input id="inputDiv3-2" type="text" placeholder="dia">           
+        </div>
+        <div class="div4"> 
+          <label for="">Obcervação</label>
+          <input type="text" placeholder="Add a note"> 
+        </div>
+        <div class="div5"> 
+          <input type="submit" placeholder="Add"> </div>
       </div>
-      
     </div>
   </header>
   <main>
@@ -132,4 +153,5 @@
   <script src="{% static '/schedules/js/index.js' %}"></script>
 
 </body>
+
 </html>
