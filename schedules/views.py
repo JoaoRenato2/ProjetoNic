@@ -1,3 +1,4 @@
+from asyncio.windows_events import NULL
 from hashlib import sha256
 import re
 from django.contrib.auth import authenticate
@@ -7,7 +8,7 @@ from django.shortcuts import redirect, render
 import json
 from validate_email import validate_email
 from django.views import View
-from schedules.models import Usuario
+from schedules.models import Usuario, Consultas
 
 
 # Create your views here.
@@ -32,7 +33,6 @@ def scheduling(request):
 def form(request):
     return render(request, 'Form.html')
 
- 
 
 def validar_cadastro(request):
     if request.method == 'POST':
@@ -83,6 +83,18 @@ def validar_login(request):
     else: 
         request.session['usuario'] = usuario[0].id
         return redirect(f'/auth/index/?id_usuario={request.session["usuario"]}')
+
+def Appointment_Booking(request):
+    if request.method == 'POST':
+        nome = request.POST.get('nome')
+        categoria = request.POST.getlist('categoria')
+        data = request.POST.get('data')
+        hora = request.POST.get('hora')
+        observacao = request.POST.get('observacao')
+        if (nome != NULL):
+            appointment = Consultas(name = nome, categoria = categoria, data = data, hora = hora, observacao = observacao)
+            appointment.save()
+            return redirect('/auth/index')
         
 def sair(request):
     request.session.flush()

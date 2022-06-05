@@ -111,42 +111,57 @@
       </div>
     </div>
     <div class="panel-scheudle">
-      <div class="h1">
-        <span>Add New</span>
-        <button id="close-form">x</button>
-      </div>
-      <div class="inputs-panel">
-        <div class="div1"> <label for="">Nome</label><input type="text" placeholder="Escreva o seu nome"> </div>
-        <div class="div2">
-          <label for="">Categoria</label>
-          <label id="input-radio1" for="">
-            <input type="radio" name="categoria">
-            Opção2
-          </label>
-          <label id="input-radio2" for="">
-            <input type="radio" name="categoria">Opção1
-          </label>
-          <label id="input-radio3" for="">
-            <input type="radio" name="categoria">Opção3
-          </label>
-          <label id="input-radio4" for="">
-            <input type="radio" name="categoria">Opção3
-          </label>
+      <form action="{% url 'booking' %}" method="POST">
+        {% csrf_token %}
+        <div class="h1">
+          <span>Add New</span>
+          <button id="close-form">x</button>
         </div>
-        <div class="div3"> 
-          <label for="">Horario</label>
-          <input type="text" placeholder="hora"> 
-          <input id="inputDiv3-2" type="text" placeholder="dia">           
+        <div class="inputs-panel">
+          <div class="div1">
+            <label for="">Nome</label>
+            <input type="text" id="nome" placeholder="Escreva o seu nome" name="nome">
+          </div>
+          <div class="div2">
+            <label for="">Categoria</label>
+            <label id="input-radio1" for="">
+              <input value="Opção1" type="radio" name="categoria">
+              Opção1
+            </label>
+            <label id="input-radio2" for="">
+              <input value="Opção2" type="radio" name="categoria">Opção2
+            </label>
+            <label id="input-radio3" for="">
+              <input value="Opção4" type="radio" name="categoria">Opção4
+            </label>
+            <label id="input-radio4" for="">
+              <input value="Opção3" type="radio" name="categoria">Opção3
+            </label>
+          </div>
+          <div class="div3">
+            <label for="">Horario</label>
+            <input name="hora" type="text" placeholder="hora">
+            <input name="data" id="inputDiv3-2" type="text" placeholder="dia">
+          </div>
+          <div class="div4">
+            <label for="">Obcervação</label>
+            <input name="observacao" type="text" placeholder="Add a note">
+          </div>
+          <div class="div5">
+            <input id="saveButton" type="submit" placeholder="Add"> </div>
         </div>
-        <div class="div4"> 
-          <label for="">Obcervação</label>
-          <input type="text" placeholder="Add a note"> 
-        </div>
-        <div class="div5"> 
-          <input type="submit" placeholder="Add"> </div>
-      </div>
+      </form>
     </div>
-    
+
+    <div id="deleteEventModal">
+      <h2>Event</h2>
+
+      <p id="eventText"></p>
+
+      <button id="deleteButton">Delete</button>
+      <button id="closeButton">Close</button>
+    </div>
+
   </header>
   <main>
   </main>

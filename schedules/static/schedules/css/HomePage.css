@@ -325,12 +325,16 @@ body {
 }
 
 .event {
+    position: relative;
+    bottom: 35px;
+    left: 10px;
     font-size: 10px;
     padding: 3px;
-    background-color: #58bae4;
+    background-color: #e0003a;
     color: white;
     border-radius: 5px;
     max-height: 55px;
+    max-width: 145px;
     overflow: hidden;
 }
 
@@ -353,8 +357,7 @@ body {
 
 .day {
     width: 175px;
-    padding: 60px;
-    height: 1px;
+    height: 100px;
     cursor: pointer;
     background-color: white;
     box-shadow: 0px 0px 3px #CBD4C2;
@@ -364,6 +367,28 @@ body {
     position: relative;
     bottom: 8px;
     left: 10px;
+}
+
+#deleteEventModal {
+    display: none;
+    z-index: 20;
+    padding: 25px;
+    background-color: #e8f4fa;
+    box-shadow: 0px 0px 3px black;
+    border-radius: 5px;
+    width: 350px;
+    top: 100px;
+    left: calc(50% - 175px);
+    position: absolute;
+    font-family: sans-serif;
+}
+
+#deleteButton {
+    background-color: #d36c6c;
+}
+
+#closeButton {
+    background-color: #92a1d1;
 }
 
 .bx-calendar {
@@ -401,6 +426,7 @@ body {
 }
 
 
+
 #schedule {
     position: relative;
     left: 850px;
@@ -421,8 +447,8 @@ body {
 .panel-scheudle {
     position: absolute;
     opacity: 0;
-    top: 200px;
-    left: 1250px;
+    top: 150px;
+    left: 1000px;
     height: 100%;
     width: 100%;
     overflow: hidden;
@@ -572,7 +598,7 @@ body {
 
 }
 
-.div3 input{
+.div3 input {
     position: relative;
     left: 50px;
     top: 15px;
@@ -582,10 +608,10 @@ body {
     border: solid 1px;
     border-color: #dadada;
     border-radius: 3px;
-    
+
 }
 
-#inputDiv3-2{
+#inputDiv3-2 {
     position: relative;
     left: 55px;
 }
@@ -604,7 +630,7 @@ body {
     color: #5f5f5f;
 }
 
-.div4 input{
+.div4 input {
     position: relative;
     top: 10px;
     left: 10px;
@@ -615,7 +641,7 @@ body {
     border-radius: 3px;
 }
 
-.div4 label{
+.div4 label {
     position: relative;
     top: 13px;
 }
@@ -623,11 +649,11 @@ body {
 .div5 {
     grid-area: 5 / 2 / 6 / 5;
     position: relative;
-    
+
 
 }
 
-.div5 input{
+.div5 input {
     position: relative;
     left: 210px;
     top: 20px;
