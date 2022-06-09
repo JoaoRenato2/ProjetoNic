@@ -20,14 +20,14 @@
             <div class="singin-signup">
                 <div class="forms-container">
                     <div class="invalid_feedback invalid_feedback" style="display:none">
-                        
+
                     </div>
                     <div class="signin-signup">
                         <!--Inicio do formulario de Login-->
-                        <form action="{% url 'validar_login' %}" method = "POST" class="sign-in-form">{% csrf_token %}
+                        <form action="{% url 'validar_login' %}" method="POST" class="sign-in-form">{% csrf_token %}
                             {% if status == '1' %}
                             <div class="login_erro">
-                                <h2>Email ou senha invalidos</h2>
+                                <h2>Matricula ou senha invalidos</h2>
                             </div>
                             {% endif %}
                             {% if status == '2' %}
@@ -38,11 +38,11 @@
                             <h2 class="title">Entrar no NIC </h2>
                             <div class="input-field">
                                 <i class="fas fa-user"></i>
-                                <input type="text" placeholder="Matricula" name = "username">
+                                <input type="text" placeholder="Matricula" name="username">
                             </div>
                             <div class="input-field">
                                 <i class="fas fa-lock"></i>
-                                <input type="password" placeholder="Senha" name = "senha" id="senha-login">
+                                <input type="password" placeholder="Senha" name="senha" id="senha-login">
                                 <i class="fas fa-eye" id="eye-login"></i>
                             </div>
                             <input type="submit" value="Login" class="btn solid">
@@ -66,26 +66,28 @@
                         <!---->
                         <!--Inicio do formulario de Registro-->
                         <a name="form-anchor"></a>
-                        
-                        <form id="form-cadastro"  class="sign-up-form">
+
+                        <form id="form-cadastro" class="sign-up-form">
                             {% csrf_token %}
                             <h2 id="success"></h2>
                             <h2 class="title">Criar uma nova conta</h2>
                             <div class="input-field register">
                                 <i class="fas fa-user"></i>
-                                <input type="text" placeholder="Nome" id="nome" name = "nome">
+                                <input type="text" placeholder="Nome" id="nome" name="nome">
                             </div>
                             <div class="input-field register" id="erro_matricula">
                                 <i class="fa-solid fa-graduation-cap"></i>
-                                <input class="Matricula_Cadastro" type="text" placeholder="Matricula" id="username" name = "username">
+                                <input class="Matricula_Cadastro" type="text" placeholder="Matricula" id="username"
+                                    name="username">
                             </div>
-                            <div class="input-field register" >
+                            <div class="input-field register">
                                 <i class="fas fa-envelope"></i>
-                                <input class="Email_Cadastro" type="text" placeholder="Email" id="email" name = "email">
+                                <input class="Email_Cadastro" type="text" placeholder="Email" id="email" name="email">
                             </div>
                             <div class="input-field register">
                                 <i class="fas fa-lock"></i>
-                                <input class="Senha_Cadastro" type="password" placeholder="Senha" id="senha" name = "senha">
+                                <input class="Senha_Cadastro" type="password" placeholder="Senha" id="senha"
+                                    name="senha">
                                 <i class="fas fa-eye" id="eye-cadastro"></i>
                             </div>
                             <input type="submit" value="Cadastrar" id="btn_cadastro" class="btn solid">
@@ -117,8 +119,10 @@
             <div class="panel left-panel">
                 <div class="content">
                     <h3>Novo Aqui ?</h3>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut quae exercitationem quia eaque, quisquam labore consectetur qui voluptate placeat magni eum non accusantium, mollitia nulla, odit minima autem rerum rem?</p>
-                    <button  class="btn trasnparent"  id="sign-up-btn">Cadastra-se</button>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut quae exercitationem quia eaque,
+                        quisquam labore consectetur qui voluptate placeat magni eum non accusantium, mollitia nulla,
+                        odit minima autem rerum rem?</p>
+                    <button class="btn trasnparent" id="sign-up-btn">Cadastra-se</button>
                 </div>
                 <img src="{% static 'schedules/img/login.svg' %}" class="image" alt="">
             </div>
@@ -126,7 +130,9 @@
             <div class="panel right-panel">
                 <div class="content">
                     <h3>Já é um dos nossos ?</h3>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut quae exercitationem quia eaque, quisquam labore consectetur qui voluptate placeat magni eum non accusantium, mollitia nulla, odit minima autem rerum rem?</p>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut quae exercitationem quia eaque,
+                        quisquam labore consectetur qui voluptate placeat magni eum non accusantium, mollitia nulla,
+                        odit minima autem rerum rem?</p>
                     <button class="btn trasnparent" id="sign-in-btn">Faça o Login</button>
                 </div>
                 <img src="{% static 'schedules/img/register.svg' %}" class="image" alt="">
@@ -135,25 +141,27 @@
     </div>
     <script src="{% static 'schedules/js/app.js' %}"></script>
     <script type="text/javascript">
-        $(document).on('submit', '#form-cadastro', function(e){
+        $(document).on('submit', '#form-cadastro', function (e) {
             e.preventDefault();
             $.ajax({
-                type:'POST',
-                url:'{% url 'validar_cadastro' %}',
-                data:{
-                    nome:$('#nome').val(),
-                    username:$('#username').val(),
-                    email:$('#email').val(),
-                    senha:$('#senha').val(),
-                    csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val()
+                type: 'POST',
+                url: '{% url '
+                validar_cadastro ' %}',
+                data: {
+                    nome: $('#nome').val(),
+                    username: $('#username').val(),
+                    email: $('#email').val(),
+                    senha: $('#senha').val(),
+                    csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val()
                 },
-                success: function(data){
+                success: function (data) {
                     $('#success').addClass('success');
                     $('#success').html(data);
-                    },
-                })
+                },
+            })
         });
     </script>
-    
+
 </body>
+
 </html>

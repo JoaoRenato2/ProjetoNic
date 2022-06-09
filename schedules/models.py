@@ -1,12 +1,14 @@
 from django.db import models
 
 
+
 class Usuario(models.Model):
-    nome = models.CharField(max_length=50)
+    username = models.CharField(max_length=50)
+    first_name = models.CharField(max_length=50, null=True)
+    last_name = models.CharField(max_length=50, null=True)
     matricula = models.CharField(max_length=50, null=True)
     email = models.EmailField()
-    senha = models.CharField(max_length=64)
-
+    password = models.CharField(max_length=64)
     def __str__(self) -> str:
         return self.matricula
 

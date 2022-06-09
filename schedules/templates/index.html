@@ -7,12 +7,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Agendamentos Nic</title>
-  <link rel="stylesheet" href="{% static '/schedules/css/HomePage.css' %}">
+  <link rel="stylesheet" href="{% static '/schedules/css/scheduling.css'%}">
   <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
-
 </head>
 
-<body>
+<body">
   <header>
     <div class="sidebar">
       <div class="logo_content">
@@ -31,14 +30,14 @@
           <span class="tooltip">Procurar</span>
         </li>
         <li>
-          <a href="agendamento/">
+          <a href="calendario/">
             <i class='bx bxs-calendar'></i>
             <span class="links_game">Agendamentos</span>
           </a>
           <span class="tooltip">Agendamentos</span>
         </li>
         <li>
-          <a href="">
+          <a href="perfil/">
             <i class='bx bx-user'></i>
             <span class="links_game">Perfil</span>
           </a>
@@ -85,89 +84,64 @@
         </div>
       </div>
     </div>
-    <div class="home_content">
-      <div class="panel">
-        <div class="infos">
-          <div class="icons">
-            <ul class="icons-ul ">
-              <i class="icons-l bx bx-left-arrow-alt" id="backButton"></i>
-              <i class="icons-l bx bx-calendar"></i>
-              <i id="monthDisplay" class="icons-l dates"></i>
-              <i class="icons-l bx bx-right-arrow-alt" id="nextButton"></i>
-            </ul>
+    <div>
+      <div class="home_content">
+        <div class="container">
+          <div class="card">
+            <div class="imgBx" style="background-image: url('{% static '/schedules/img/renata.jpg' %}'),linear-gradient(to top, #5f72bd 0%, #9b23ea 100%);
+            background-size: cover;
+            background-position: 50%;
+            background-position-y: 1px;
+            background-repeat: no-repeat;">
+            </div>
+            <div class="content">
+              <div class="details">
+                <h2>Renata Santana <br><span>Professora/Pedagoga</span></h2>
+                <div class="dados">
+                  <h3>100<br><span>Exex</span></h3>
+                  <h3>100<br><span>Exex</span></h3>
+                  <h3>100<br><span>Exex</span></h3>
+                </div>
+                <div class="actionBtn">
+                  <button>Marcar</button>
+                  <button id="mes">Menssagen</button>
+                </div>
+              </div>
+              
+            </div>
           </div>
-          <buttonid id="schedule">+ Add New</button>
+          <div id="rogerio" class="card">
+            <div class="imgBx" style="background-image: url('{% static '/schedules/img/rogerio.png' %}'),linear-gradient(to top, #5f72bd 0%, #9b23ea 100%);
+            background-size: cover;
+            background-position: 50%;
+            background-position-y: 1px;
+            background-repeat: no-repeat;">
+            </div>
+            <div class="content">
+              <div class="details">
+                <h2>Renata Santana <br><span>Professora/Pedagoga</span></h2>
+                <div class="dados">
+                  <h3>100<br><span>Exex</span></h3>
+                  <h3>100<br><span>Exex</span></h3>
+                  <h3>100<br><span>Exex</span></h3>
+                </div>
+                <div class="actionBtn">
+                  <button>Marcar</button>
+                  <button id="mes">Menssagen</button>
+                </div>
+              </div>
+              
+            </div>
+          </div>
         </div>
-        <div id="weekdays">
-          <div>Domingo</div>
-          <div>Segunda</div>
-          <div>Terça</div>
-          <div>Quarta</div>
-          <div>Quinta</div>
-          <div>Sexta</div>
-          <div>Sabado</div>
-        </div>
-        <div id="calendar"></div>
+
       </div>
-    </div>
-    <div class="panel-scheudle">
-      <form action="{% url 'booking' %}" method="POST">
-        {% csrf_token %}
-        <div class="h1">
-          <span>Add New</span>
-          <button id="close-form">x</button>
-        </div>
-        <div class="inputs-panel">
-          <div class="div1">
-            <label for="">Nome</label>
-            <input type="text" id="nome" placeholder="Escreva o seu nome" name="nome">
-          </div>
-          <div class="div2">
-            <label for="">Categoria</label>
-            <label id="input-radio1" for="">
-              <input value="Opção1" type="radio" name="categoria">
-              Opção1
-            </label>
-            <label id="input-radio2" for="">
-              <input value="Opção2" type="radio" name="categoria">Opção2
-            </label>
-            <label id="input-radio3" for="">
-              <input value="Opção4" type="radio" name="categoria">Opção4
-            </label>
-            <label id="input-radio4" for="">
-              <input value="Opção3" type="radio" name="categoria">Opção3
-            </label>
-          </div>
-          <div class="div3">
-            <label for="">Horario</label>
-            <input name="hora" type="text" placeholder="hora">
-            <input name="data" id="inputDiv3-2" type="text" placeholder="dia">
-          </div>
-          <div class="div4">
-            <label for="">Obcervação</label>
-            <input name="observacao" type="text" placeholder="Add a note">
-          </div>
-          <div class="div5">
-            <input id="saveButton" type="submit" placeholder="Add"> </div>
-        </div>
-      </form>
-    </div>
-
-    <div id="deleteEventModal">
-      <h2>Event</h2>
-
-      <p id="eventText"></p>
-
-      <button id="deleteButton">Delete</button>
-      <button id="closeButton">Close</button>
     </div>
 
   </header>
   <main>
   </main>
-  <script src="{% static '/schedules/js/calendar.js' %}"></script>
   <script src="{% static '/schedules/js/index.js' %}"></script>
-
-</body>
+  </body>
 
 </html>

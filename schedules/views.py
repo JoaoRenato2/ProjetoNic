@@ -1,7 +1,7 @@
 from asyncio.windows_events import NULL
 from hashlib import sha256
 import re
-from django.contrib.auth import authenticate
+from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 from django.http import HttpResponse, request, JsonResponse
 from django.shortcuts import redirect, render
@@ -9,6 +9,8 @@ import json
 from validate_email import validate_email
 from django.views import View
 from schedules.models import Usuario, Consultas
+from django.contrib.auth.hashers import make_password
+
 
 
 # Create your views here.
@@ -33,6 +35,18 @@ def scheduling(request):
 def form(request):
     return render(request, 'Form.html')
 
+def perfil(request):
+    return render(request, 'perfil.html')
+
+def perfilSenha(request):
+    return render(request, 'perfil-senha.html')
+
+def calendario(request):
+    return render(request, 'calendar.html')
+
+def sobre(request):
+    return render(request, 'sobre.html')
+
 
 def validar_cadastro(request):
     if request.method == 'POST':
@@ -46,7 +60,7 @@ def validar_cadastro(request):
                 if len(senha) < 8:
                     return HttpResponse("A senha deve ser maior que 8 caracteres")
                 user = Usuario(nome=nome, matricula=matricula, email=email, senha=senha)
-                senha = sha256(senha.encode()).hexdigest()
+                user.senha = make_password(user.senha)
                 user.save()
                 success = 'Usuario Criado com sucesso'
                 return HttpResponse(success)
@@ -75,14 +89,15 @@ class EmailValidationView(View):
 
 
 def validar_login(request):
-    matricula = request.POST.get('username')
-    senha = request.POST.get('senha')
-    usuario = Usuario.objects.filter(matricula=matricula).filter(senha = senha)
-    if len(usuario)==0:
-        return redirect('/auth/login/?status=1')
+    matricula = request.POST['username']
+    senha = request.POST['senha']
+    User = authenticate(username=matricula, password=senha)
+    if User is not None:
+
+        login(request, User)
+        return redirect('index/agendamento/')  
     else: 
-        request.session['usuario'] = usuario[0].id
-        return redirect(f'/auth/index/?id_usuario={request.session["usuario"]}')
+        return redirect('/auth/login/?status=1')
 
 def Appointment_Booking(request):
     if request.method == 'POST':

@@ -1,0 +1,175 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agendamentos Nic</title>
+  <link rel="stylesheet" href="{% static '/schedules/css/HomePage.css' %}">
+  <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+
+<body>
+  <header>
+    <div class="sidebar">
+      <div class="logo_content">
+        <div class="logo_book">
+          <i class='bx bxs-book-alt'></i>
+          <div class="logo_name">NIC</div>
+        </div>
+        <i class='bx bx-menu' id="btn"></i>
+      </div>
+      <ul class="nav_list">
+        <li>
+
+          <i class='bx bx-search'></i>
+          <input type="text" placeholder="Procurar....">
+
+          <span class="tooltip">Procurar</span>
+        </li>
+        <li>
+          <a href="/auth/index/calendario/">
+            <i class='bx bxs-calendar'></i>
+            <span class="links_game">Agendamentos</span>
+          </a>
+          <span class="tooltip">Agendamentos</span>
+        </li>
+        <li>
+          <a href="/auth/index/perfil/">
+            <i class='bx bx-user'></i>
+            <span class="links_game">Perfil</span>
+          </a>
+          <span class="tooltip">Perfil</span>
+
+        </li>
+        <li>
+          <a href="">
+            <i class='bx bx-chat'></i>
+            <span class="links_game">Menssagens</span>
+          </a>
+          <span class="tooltip">Menssagens</span>
+
+        </li>
+
+        <li>
+          <a href="">
+            <i class='bx bxs-dashboard'></i>
+            <span class="links_game">Dashboard</span>
+          </a>
+          <span class="tooltip">Dashboard</span>
+
+        </li>
+
+        <li>
+          <a href="">
+            <i class='bx bx-calendar-exclamation'></i>
+            <span class="links_game">Sobre</span>
+          </a>
+          <span class="tooltip">Sobre</span>
+
+        </li>
+      </ul>
+      <div class="profile_content">
+        <div class="profile">
+          <div class="profile_details">
+            <img src="{% static '/schedules/img/profile.jpg' %}" alt="">
+            <div class="name_job">
+              {% if user.is_authenticated %}
+              <div class="name">{{ Usuario.get_username }}</div>
+              <div class="job">Aluno</div>
+              {% endif %}   
+            </div>
+          </div>
+          <i class='bx bx-log-out' id="log_out"></i>
+        </div>
+      </div>
+    </div>
+    <div class="home_content">
+      <div class="panel">
+        <div class="infos">
+          <div class="icons">
+            <ul class="icons-ul ">
+              <i class="icons-l bx bx-left-arrow-alt" id="backButton"></i>
+              <i class="icons-l bx bx-calendar"></i>
+              <i id="monthDisplay" class="icons-l dates"></i>
+              <i class="icons-l bx bx-right-arrow-alt" id="nextButton"></i>
+            </ul>
+          </div>
+          <buttonid id="schedule">+ Add New</button>
+        </div>
+        <div id="weekdays">
+          <div>Domingo</div>
+          <div>Segunda</div>
+          <div>Terça</div>
+          <div>Quarta</div>
+          <div>Quinta</div>
+          <div>Sexta</div>
+          <div>Sabado</div>
+        </div>
+        <div id="calendar"></div>
+      </div>
+    </div>
+    <div class="panel-scheudle">
+      <form action="{% url 'booking' %}" method="POST">
+        {% csrf_token %}
+        <div class="h1">
+          <span>Add New</span>
+          <button id="close-form">x</button>
+        </div>
+        <div class="inputs-panel">
+          <div class="div1">
+            <label for="">Nome</label>
+            <input type="text" id="nome" placeholder="Escreva o seu nome" name="nome">
+          </div>
+          <div class="div2">
+            <label for="">Categoria</label>
+            <label id="input-radio1" for="">
+              <input value="Opção1" type="radio" name="categoria">
+              Opção1
+            </label>
+            <label id="input-radio2" for="">
+              <input value="Opção2" type="radio" name="categoria">Opção2
+            </label>
+            <label id="input-radio3" for="">
+              <input value="Opção4" type="radio" name="categoria">Opção4
+            </label>
+            <label id="input-radio4" for="">
+              <input value="Opção3" type="radio" name="categoria">Opção3
+            </label>
+          </div>
+          <div class="div3">
+            <label for="">Horario</label>
+            <input name="hora" type="text" placeholder="hora">
+            <input name="data" id="inputDiv3-2" type="text" placeholder="dia">
+          </div>
+          <div class="div4">
+            <label for="">Obcervação</label>
+            <input name="observacao" type="text" placeholder="Add a note">
+          </div>
+          <div class="div5">
+            <input id="saveButton" type="submit" placeholder="Add"> </div>
+        </div>
+      </form>
+    </div>
+
+    <div id="deleteEventModal">
+      <h2>Event</h2>
+
+      <p id="eventText"></p>
+
+      <button id="deleteButton">Delete</button>
+      <button id="closeButton">Close</button>
+    </div>
+
+  </header>
+  <main>
+  </main>
+  <script src="{% static '/schedules/js/calendar.js' %}"></script>
+  <script src="{% static '/schedules/js/index.js' %}"></script>
+
+</body>
+
+</html>
