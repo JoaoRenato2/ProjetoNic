@@ -242,13 +242,14 @@ body {
 
 .profile #log_out {
     position: absolute;
-    left: 88%;
+    left: 95%;
     bottom: 5px;
     transform: translateX(-50px);
     min-width: 50px;
     line-height: 50px;
     font-size: 22px;
     border-radius: 12px;
+    cursor: pointer;
 }
 
 .home_content {

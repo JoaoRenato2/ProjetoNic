@@ -67,7 +67,7 @@
                         <!--Inicio do formulario de Registro-->
                         <a name="form-anchor"></a>
 
-                        <form id="form-cadastro" class="sign-up-form">
+                        <!-- <form id="form-cadastro" class="sign-up-form">
                             {% csrf_token %}
                             <h2 id="success"></h2>
                             <h2 class="title">Criar uma nova conta</h2>
@@ -106,7 +106,7 @@
                                     <i class="fab fa-linkedin"></i>
                                 </a>
                             </div> {% endcomment %}
-                        </form>
+                        </form> -->
                         <!--Fim do formulario de Registro-->
                     </div>
                 </div>
@@ -122,12 +122,12 @@
                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut quae exercitationem quia eaque,
                         quisquam labore consectetur qui voluptate placeat magni eum non accusantium, mollitia nulla,
                         odit minima autem rerum rem?</p>
-                    <button class="btn trasnparent" id="sign-up-btn">Cadastra-se</button>
+                    <button class="btn trasnparent" id="sign-up-btn"><a href="/auth/cadastro/">Cadastra-se</a> </button>
                 </div>
                 <img src="{% static 'schedules/img/login.svg' %}" class="image" alt="">
             </div>
 
-            <div class="panel right-panel">
+            <!-- <div class="panel right-panel">
                 <div class="content">
                     <h3>Já é um dos nossos ?</h3>
                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut quae exercitationem quia eaque,
@@ -136,11 +136,11 @@
                     <button class="btn trasnparent" id="sign-in-btn">Faça o Login</button>
                 </div>
                 <img src="{% static 'schedules/img/register.svg' %}" class="image" alt="">
-            </div>
+            </div> -->
         </div>
     </div>
     <script src="{% static 'schedules/js/app.js' %}"></script>
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
         $(document).on('submit', '#form-cadastro', function (e) {
             e.preventDefault();
             $.ajax({
@@ -160,7 +160,7 @@
                 },
             })
         });
-    </script>
+    </script> -->
 
 </body>
 

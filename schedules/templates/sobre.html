@@ -120,10 +120,49 @@
                 <img src="{% static '/schedules/img/hero.svg' %}" alt="">
             </div>
             <!--Content ends-->
+            <div class="container-main">
+                <div class="panel3">
+                    <h3>PEDAGOGIA INACIANA</h3>
+
+                    <img class="img-ped" src="{% static '/schedules/img/pedagogia.svg' %}" alt="">
+    
+                </div>
+                
+            </div>
+            <div class="container_time">
+                <div class="panel4">
+                    <h3>Quem é o nosso time ?</h3>
+                    <img class="img-ped" src="{% static '/schedules/img/professora.jpg' %}" alt="">
+                </div>
+                
+            </div>
+            <div class="panel5">
+                <img class="img-ped" src="{% static '/schedules/img/professor.jpg' %}" alt="">
+            </div>
+            <div class="footer">
+                <div class="panel_contato">
+                    
+                </div>
+                <div class="contato">
+                    <form action="{% url 'sobre_email' %}" method="post">{%csrf_token%}
+                        <div class="painels">
+                            <label for="">Nome</label>
+                            <Input placeholder="Nome" name="name"></Input>
+                            <label for="">Email</label>
+                            <Input placeholder="Curso" name="email"></Input>
+                            <label for="">Menssagem</label>
+                            <Input placeholder="Menssagem" name="message"></Input>
+                            <button>Enviar</button>
+                        </div>
+                    </form>
+                    
+
+                </div>
+
+            </div>
         </div>
+        
     </header>
-    <main>
-    </main>
     <script src="{% static '/schedules/js/index.js' %}"></script>
 
 </body>

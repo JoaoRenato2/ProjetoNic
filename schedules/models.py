@@ -1,3 +1,4 @@
+from tkinter.tix import Tree
 from django.db import models
 
 
@@ -6,9 +7,14 @@ class Usuario(models.Model):
     username = models.CharField(max_length=50)
     first_name = models.CharField(max_length=50, null=True)
     last_name = models.CharField(max_length=50, null=True)
-    matricula = models.CharField(max_length=50, null=True)
+    matricula = models.CharField(max_length=50, null=True, unique=True)
     email = models.EmailField()
     password = models.CharField(max_length=64)
+    
+    USERNAME_FIELD = 'matricula'
+    REQUIRED_FIELDS =[]
+    is_anonymous = True
+    is_authenticated = True
     def __str__(self) -> str:
         return self.matricula
 

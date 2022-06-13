@@ -10,8 +10,8 @@
 body {
     position: relative;
     min-height: 100vh;
+
     width: 100%;
-    overflow: hidden;
 
 }
 
@@ -301,10 +301,10 @@ h3 {
     text-shadow: 1px;
     color: #fff;
 
-    
+
 }
 
-p {
+#nic {
     position: relative;
     top: 50px;
     right: 500px;
@@ -414,4 +414,83 @@ p {
     h1 {
         font-size: 24px;
     }
+}
+
+.container-main {
+    display: flex;
+    text-align: center;
+}
+
+.panel3 {
+    height: 100vh;
+    background-color: white;
+}
+
+.panel3 h3 {
+    position: relative;
+    top: 5px;
+    font-size: 70px;
+    color: #000;
+}
+
+.container_time {
+    display: flex;
+    text-align: center;
+}
+
+.panel4 {
+    height: 100vh;
+    background-color: white;
+}
+
+.panel4 h3 {
+    position: relative;
+    left: 150px;
+    top: 5px;
+    color: #000;
+    font-size: 70px;
+}
+
+.panel5 {
+    height: 100vh;
+    background-color: white;
+}
+
+.panel5 img {
+    position: relative;
+    left: 900px;
+}
+
+.footer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    height: 100vh;
+    background-color: white;
+}
+
+.panel_contato{
+    grid-area: 1 / 1 / 2 / 2;
+}
+.contato{
+    grid-area: 1 / 2 / 2 / 3;
+}
+
+.painels{
+    position: relative;
+    top: 45vh;
+    left: 30vh;
+    height: 50vh;
+    width: 50vh;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.img-ped {
+    position: relative;
+    top: 90px;
+    right: 300px;
+    max-width: 60%;
+
 }
