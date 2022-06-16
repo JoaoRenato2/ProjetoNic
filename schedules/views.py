@@ -1,6 +1,6 @@
 from asyncio.windows_events import NULL
 from pipes import Template
-from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth import authenticate, login as auth_login, logout
 from django.contrib.auth.models import User
 from django.http import HttpResponse, request, JsonResponse
 from django.shortcuts import redirect, render
@@ -25,9 +25,11 @@ def Login(request):
 def Register(request):
     return render(request, 'Login_Register.html')
 
-@login_required
+
 def index(request):
-    return render(request, 'index.html')
+    if request.user.is_authenticated:
+        return render(request, 'index.html')
+    return HttpResponse('Você precisa estar logado')
 
 @login_required
 def scheduling(request):
@@ -63,13 +65,12 @@ def validar_cadastro(request):
         email = request.POST['email']
         senha = request.POST['senha']
 
-        user = User.objects.filter(username = matricula).first()
+        user = Usuario.objects.filter(username = matricula).first()
 
         if(user):
             return HttpResponse('Erro')
-        user = User.objects.create_user(username=matricula, email = email, password = senha, first_name=nome)
+        user = Usuario.objects.create_user(username=nome, email = email, password = senha, matricula=matricula)
         user.save()
-
         return HttpResponse('suc')
 
 
@@ -110,9 +111,9 @@ def validar_cadastro(request):
 def validar_login(request):
     matricula = request.POST['username']
     senha = request.POST['senha']
-    user = authenticate(request ,username=matricula, password=senha)
+    user = authenticate(request ,matricula=matricula, password=senha)
     if user is not None:
-        login(request, user)
+        auth_login(request, user)
         return redirect('/auth/index/')  
     else: 
         return redirect('/auth/login/?status=1')
