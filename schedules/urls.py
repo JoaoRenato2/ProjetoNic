@@ -1,6 +1,6 @@
 import django
 from django.urls import path
-from schedules.views import Register, Login, form, scheduling, validar_cadastro, validar_login, index, Appointment_Booking, perfil, perfilSenha, calendario, sobre, cadastro,logout_view, SobreTemplateView
+from schedules.views import Register, Login, form, scheduling, validar_cadastro, validar_login, index, Appointment_Booking, perfil, perfilSenha, calendario, sobre, cadastro,logout_view, SobreTemplateView, login_erro
 from django.views.decorators.csrf import csrf_exempt
 
 urlpatterns = [
@@ -21,6 +21,7 @@ urlpatterns = [
     path('index/sobre/', sobre, name='sobre'),
     path('index/logout/', logout_view, name='logout'),
     path('index/sobre/email/', SobreTemplateView.as_view(), name='sobre_email'),
+    path('login_erro/', login_erro, name='login_erro'),
 
     
 

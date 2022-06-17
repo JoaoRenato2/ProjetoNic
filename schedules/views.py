@@ -29,33 +29,49 @@ def Register(request):
 def index(request):
     if request.user.is_authenticated:
         return render(request, 'index.html')
-    return HttpResponse('Você precisa estar logado')
+    return redirect('/auth/login_erro/')
 
-@login_required
+
 def scheduling(request):
-    return render(request, 'Scheduling.html')
+    if request.user.is_authenticated:
+        return render(request, 'Scheduling.html')
+    return redirect('/auth/login_erro/')
 
 def form(request):
-    return render(request, 'Form.html')
+    if request.user.is_authenticated:
+        return render(request, 'Form.html')
+    return redirect('/auth/login_erro/')
+    
 
-@login_required
+
 def perfil(request):
-    return render(request, 'perfil.html')
+    if request.user.is_authenticated:
+        return render(request, 'perfil.html')
+    return redirect('/auth/login_erro/')
+    
 
-@login_required
+
 def perfilSenha(request):
-    return render(request, 'perfil-senha.html')
+    if request.user.is_authenticated:
+        return render(request, 'perfil-senha.html')
+    return redirect('/auth/login_erro/')
+    
 
-@login_required
+
 def calendario(request):
-    return render(request, 'calendar.html')
+    if request.user.is_authenticated:
+        return render(request, 'calendar.html')
+    return redirect('/auth/login_erro/')
 
-@login_required
 def sobre(request):
     return render(request, 'sobre.html')
 
 def cadastro(request):
     return render(request, 'cadastro.html')
+
+def login_erro(request):
+    return render(request, 'LoginRequest.html')
+
 
 
 def validar_cadastro(request):
