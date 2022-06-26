@@ -1,18 +1,19 @@
 from asyncio.windows_events import NULL
 from pipes import Template
+from django import views
+from django.contrib.auth.forms import UserChangeForm, PasswordChangeForm
 from django.contrib.auth import authenticate, login as auth_login, logout
 from django.contrib.auth.models import User
 from django.http import HttpResponse, request, JsonResponse
 from django.shortcuts import redirect, render
+from django.urls import reverse
 from schedules.models import Usuario, Consultas
 from django.contrib.auth.decorators import login_required
 from django.views.generic.base import TemplateView
 from django.core.mail import EmailMessage
 from django.conf import settings
-
-
-
-
+from django.contrib.auth import update_session_auth_hash
+from django.contrib.auth.views import PasswordChangeView
 
 # Create your views here.
 def home(request):
@@ -169,3 +170,24 @@ class SobreTemplateView(TemplateView):
         )
         email.send()
         return HttpResponse("suce")
+
+
+def change_password(request):
+    if request.method == 'POST':
+        form = PasswordChangeForm(data=request.POST, user=request.user)
+
+        if form.is_valid():
+            form.save()
+            update_session_auth_hash(request, form.user)
+            return redirect(reverse('perfil'))
+        else:
+            return redirect(reverse('change_password'))
+    else:
+        form = PasswordChangeForm(user=request.user)
+
+        args = {'form': form}
+        return render(request, 'change_password.html', args)
+
+class PasswordChangeView(PasswordChangeView):
+    form_class = PasswordChangeForm
+    success_url = ('/auth/login/')

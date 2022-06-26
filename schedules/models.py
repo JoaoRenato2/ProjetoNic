@@ -130,7 +130,14 @@ class Usuario(AbstractBaseUser, PermissionsMixin):
     matricula = models.CharField(max_length=50,null=True, unique=True)
     email = models.EmailField()
     password = models.CharField(max_length=250)
-    picture = models.ImageField(blank=True, null=True, upload_to = "media")
+    picture = models.ImageField(blank=True, null=True, upload_to = "profile_images")
+    telefone = models.CharField(max_length=50, null=True)
+    curso = models.CharField(max_length=50, null=True)
+    periodo = models.CharField(max_length=50, null=True)
+    bio = models.TextField(blank=True, null=True)
+
+
+
 
     is_superuser =  models.BooleanField(
         _("staff status"),

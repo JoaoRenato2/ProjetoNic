@@ -1,7 +1,10 @@
+from tempfile import template
 import django
 from django.urls import path
-from schedules.views import Register, Login, form, scheduling, validar_cadastro, validar_login, index, Appointment_Booking, perfil, perfilSenha, calendario, sobre, cadastro,logout_view, SobreTemplateView, login_erro
+from schedules.views import Register, Login, form, scheduling, validar_cadastro, validar_login, index, Appointment_Booking, perfil, perfilSenha, calendario, sobre, cadastro,logout_view, SobreTemplateView, login_erro,change_password,PasswordChangeView
 from django.views.decorators.csrf import csrf_exempt
+
+from django.contrib.auth import views
 
 
 from django.conf import settings
@@ -26,9 +29,5 @@ urlpatterns = [
     path('index/logout/', logout_view, name='logout'),
     path('index/sobre/email/', SobreTemplateView.as_view(), name='sobre_email'),
     path('login_erro/', login_erro, name='login_erro'),
-
-    
-
-
-    
-]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    path('change/', PasswordChangeView.as_view(template_name = 'change_password.html')),
+]

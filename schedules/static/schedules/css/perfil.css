@@ -276,6 +276,10 @@ a {
 
 /* Inicio do css do conteudo perfil */
 
+#file{
+    display: none;
+}
+
 .container {
     display: flex;
     align-items: center;

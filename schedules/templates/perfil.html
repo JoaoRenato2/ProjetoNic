@@ -75,11 +75,21 @@
       <div class="profile_content">
         <div class="profile">
           <div class="profile_details">
+            {% if user.picture.url%}
             <img src="{% static '/schedules/img/profile.jpg' %}" alt="">
+            {% else %}
+            <img class="perfil-img" src="{{user.picture.url}}" alt="">
+            {% endif %}
+
             <div class="name_job">
               {% if user.is_authenticated %}
-              <div class="name">{{ user.username}}</div>
-              <div class="job">Aluno</div>
+                {% if user.is_staff %}
+                  <div class="name">{{ user.username}}</div>
+                  <div class="job">Professor</div>
+                {% else %}
+                  <div class="name">{{ user.username}}</div>
+                  <div class="job">Aluno</div>
+                {% endif %}
               {% endif %}
             </div>
           </div>
@@ -89,11 +99,29 @@
     </div>
     <div class="home_content">
       <div class="container">
-        <form action="">
+        <form action="" enctype="multipart/form-data">
           <div class="panel-options">
             <ul>
-              <li><a href=""><img class="perfil-img" src="{%static '/schedules/media/media/renata-info.jpg' %}" alt=""></a></li>
-              <li><label class="perfil-nome" for="">Joao Renato</label></li>
+              {% if user.picture.url%}
+              <li> 
+                <div class="img-profile">
+                  <input id="file" type="file">
+                  <img class="perfil-img" src="{{user.picture.url}}" alt="">
+                </div>
+              </li>
+              <li><label class="perfil-nome" for="">{{user.username}}</label></li>
+              {% else %}
+              <li>
+                <div class="img-profile">
+                  <label for="file">
+                    <span>change</span>
+                  </label>
+                  <input id="file" type="file">
+                  <img class="perfil-img" src="{% static '/schedules/img/profile.jpg' %}" alt="">
+                </div>
+              </li>
+              <li><label class="perfil-nome" for="">{{user.username}}</label></li>
+              {% endif %}
             </ul>
             <ul class="seg-ul">
               <li><a href="/auth/index/perfil/">Conta</a></li>
