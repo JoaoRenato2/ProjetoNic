@@ -128,6 +128,9 @@ STATIC_ROOT = BASE_DIR / 'static'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+MEDIA_ROOT =  os.path.join(BASE_DIR, 'schedules/media') 
+MEDIA_URL = '/media/'
+
 AUTH_USER_MODEL = 'schedules.Usuario'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'

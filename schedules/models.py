@@ -1,3 +1,4 @@
+from distutils.command.upload import upload
 from enum import unique
 from django.contrib.auth.base_user import AbstractBaseUser, BaseUserManager
 from django.utils.translation import gettext_lazy as _
@@ -15,6 +16,7 @@ from django.db import models
 from django.db.models.manager import EmptyManager
 from django.utils import timezone
 from django.utils.itercompat import is_iterable
+
 
 class UserManager(BaseUserManager):
     use_in_migrations = True
@@ -83,43 +85,43 @@ class UserManager(BaseUserManager):
 
 
 # A few helper functions for common logic between User and AnonymousUser.
-    def _user_get_permissions(user, obj, from_name):
-        permissions = set()
-        name = "get_%s_permissions" % from_name
-        for backend in auth.get_backends():
-            if hasattr(backend, name):
-                permissions.update(getattr(backend, name)(user, obj))
-        return permissions
+def _user_get_permissions(user, obj, from_name):
+    permissions = set()
+    name = "get_%s_permissions" % from_name
+    for backend in auth.get_backends():
+        if hasattr(backend, name):
+            permissions.update(getattr(backend, name)(user, obj))
+    return permissions
 
 
-    def _user_has_perm(user, perm, obj):
-        """
-        A backend can raise `PermissionDenied` to short-circuit permission checking.
-        """
-        for backend in auth.get_backends():
-            if not hasattr(backend, "has_perm"):
-                continue
-            try:
-                if backend.has_perm(user, perm, obj):
-                    return True
-            except PermissionDenied:
-                return False
-        return False
+def _user_has_perm(user, perm, obj):
+    """
+    A backend can raise `PermissionDenied` to short-circuit permission checking.
+    """
+    for backend in auth.get_backends():
+        if not hasattr(backend, "has_perm"):
+            continue
+        try:
+            if backend.has_perm(user, perm, obj):
+                return True
+        except PermissionDenied:
+            return False
+    return False
 
 
-    def _user_has_module_perms(user, app_label):
-        """
-        A backend can raise `PermissionDenied` to short-circuit permission checking.
-        """
-        for backend in auth.get_backends():
-            if not hasattr(backend, "has_module_perms"):
-                continue
-            try:
-                if backend.has_module_perms(user, app_label):
-                    return True
-            except PermissionDenied:
-                return False
-        return False
+def _user_has_module_perms(user, app_label):
+    """
+    A backend can raise `PermissionDenied` to short-circuit permission checking.
+    """
+    for backend in auth.get_backends():
+        if not hasattr(backend, "has_module_perms"):
+            continue
+        try:
+            if backend.has_module_perms(user, app_label):
+                return True
+        except PermissionDenied:
+            return False
+    return False
 
 class Usuario(AbstractBaseUser, PermissionsMixin):
     username = models.CharField(max_length=50)
@@ -127,7 +129,8 @@ class Usuario(AbstractBaseUser, PermissionsMixin):
     last_name = models.CharField(max_length=50, null=True)
     matricula = models.CharField(max_length=50,null=True, unique=True)
     email = models.EmailField()
-    password = models.CharField(max_length=64)
+    password = models.CharField(max_length=250)
+    picture = models.ImageField(blank=True, null=True, upload_to = "media")
 
     is_superuser =  models.BooleanField(
         _("staff status"),

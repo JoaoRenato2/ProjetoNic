@@ -426,12 +426,179 @@ h3 {
     background-color: white;
 }
 
-.panel3 h3 {
+
+.title{
+    font-family: 'Poppins',monospace;
     position: relative;
-    top: 5px;
-    font-size: 70px;
+    text-align: center;
+    font-size: 30px;
     color: #000;
+    left: 5vh;
+    width: 50%;
 }
+
+.sub-title{
+    font-family: 'Poppins',monospace;
+    font-size: 20px;
+    position: relative;
+    color: grey;
+    text-align: center;
+    bottom: 1vh;
+    left: 5vh;
+    width: 50%;
+
+
+}
+
+.panel3-form .img-ped{
+    position: relative;
+    width: 100% ;
+    
+}
+
+.panel3-form {
+    /* background-color: #000; */
+    width: 30%;
+    position: relative;
+    right: 15vh;
+    display: inline-block;
+    
+}
+
+.panel3-form p{
+    font-family: 'Poppins',monospace;
+    text-align: left;
+    margin-top: 10px;
+    color: rgb(172, 172, 172);
+}
+
+.panel3-form h3{
+    position: relative;
+    top: 1vh;
+    text-align: left;
+    font-family: 'Poppins',monospace;
+    letter-spacing: normal;
+    color: #000;
+    font-size: 20px;
+    text-transform: none;
+}
+
+.panel3-form2 {
+    /* background-color: #000; */
+    width: 30%;
+    position: relative;
+    left: 10vh;
+    top: 41px;
+    display: inline-block;
+    
+}
+
+.panel3-form2 p{
+    font-family: 'Poppins',monospace;
+    text-align: left;
+    margin-top: 10px;
+    color: rgb(172, 172, 172);
+}
+
+.panel3-form2 h3{
+    position: relative;
+    top: 1vh;
+    text-align: left;
+    font-family: 'Poppins',monospace;
+    letter-spacing: normal;
+    color: #000;
+    font-size: 20px;
+    text-transform: none;
+}
+
+.panel4-form {
+    /* background-color: #000; */
+    width: 20%;
+    position: relative;
+    right: 24vh;
+    display: inline-block;
+    
+}
+
+.panel4-form p{
+    font-family: 'Poppins',monospace;
+    text-align: left;
+    margin-top: 10px;
+    color: rgb(172, 172, 172);
+    position: relative;
+    right: 4vh;
+    width: 150%;
+
+}
+
+.panel4-form h3{
+    position: relative;
+    top: 1vh;
+    right: 4vh;
+    text-align: left;
+    font-family: 'Poppins',monospace;
+    letter-spacing: normal;
+    color: #000;
+    font-size: 20px;
+    text-transform: none;
+    width: 110%;
+}
+
+.panel4-form img{
+    position: relative;
+    right: 10vh;
+    width: 170%;
+   
+}
+
+.panel4-form2 {
+    /* background-color: #000; */
+    width: 25%;
+    position: relative;
+    left: 10vh;
+    top: 41px;
+    display: inline-block;
+    
+}
+
+.panel4-form2 p{
+    font-family: 'Poppins',monospace;
+    
+    position: relative;
+    left: 7vh;
+    bottom: 43px;
+    text-align: left;
+    width: 120%;
+    color: rgb(172, 172, 172);
+}
+
+.panel4-form2 h3{
+    position: relative;
+    top: 0.1vh;
+    left: 7vh;
+    text-align: left;
+    font-family: 'Poppins',monospace;
+    letter-spacing: normal;
+    color: #000;
+    font-size: 20px;
+    text-transform: none;
+    margin-bottom: 45px;
+   
+}
+
+.panel4-form2 img{
+    position: relative;
+    top: 7vh;
+    width: 160%;
+}
+
+/* .img-ped1 {
+    position: relative;
+    left: 100vh;
+    bottom: 41vh;
+    max-width: 85%;
+    
+} */
 
 .container_time {
     display: flex;
@@ -443,23 +610,17 @@ h3 {
     background-color: white;
 }
 
-.panel4 h3 {
-    position: relative;
-    left: 150px;
-    top: 5px;
-    color: #000;
-    font-size: 70px;
-}
 
 .panel5 {
     height: 100vh;
     background-color: white;
 }
 
-.panel5 img {
-    position: relative;
-    left: 900px;
+.panel5 img{
+    width: 15%;
 }
+
+
 
 .footer {
     display: grid;
@@ -472,25 +633,146 @@ h3 {
 }
 
 .panel_contato{
+    
     grid-area: 1 / 1 / 2 / 2;
 }
 .contato{
+   
     grid-area: 1 / 2 / 2 / 3;
 }
 
 .painels{
     position: relative;
-    top: 45vh;
+    top: 40vh;
     left: 30vh;
-    height: 50vh;
+    height:60vh;
     width: 50vh;
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    /* box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2); */
 }
 
-.img-ped {
+.painels input{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom:  2px solid;
+    border-color: gainsboro;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    margin-top: 10px;
+    width: 100%;
+    font-family: 'Poppins', monospace;
+    font-weight: 500;
+
+}
+
+.painels button{
+    text-align: center;
+    width: 100%;
+    padding-bottom: 20px;
+    border: none;
+    color: white;
+    
+    background-color: #11101d;
+}
+
+.painels h2{
+    font-family: 'Poppins',monospace;
+    font-size: 50px;
+    letter-spacing: 3px;
+}
+
+.painels p{
+    font-family: 'Poppins', monospace;
+    font-size: smaller;
+    color: rgb(177, 176, 176);
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.painels li{
+    text-decoration: none;
+    list-style: none;
+    
+}
+
+.infos{
     position: relative;
-    top: 90px;
-    right: 300px;
-    max-width: 60%;
+    z-index: 2;
+    bottom: 10vh;
+    left: 20vh;
+    height:55vh;
+    width: 60vh;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    background-color: #1d1d1f;
+    color: #fff;
+}
+
+.efeito{
+    position: absolute;
+    bottom: 390px;
+    right: 430px;
+    height:6vh;
+    width: 6vh;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    background-color: red;
+}
+
+.collum{
+    position: relative;
+    top: 20vh;
+    left: 18px;
+    z-index: 1;
+    height: 100vh;
+    width: 30vh;
+    background-color: red;
+    
+}
+
+.infos,.collum{
+    display: inline-block;
+}
+
+.infos ul{
+    text-decoration: none;
+    list-style: none;
+    margin-left: 50px;
+    color: rgb(192, 192, 192);
+}
+
+.infos ul li h2{
+    font-family: 'Poppins', monospace;
+    font-size: xx-large;
+    color: #fff;
+    margin-top: 30px ;
+    position: relative;
+    top: 40px;
 
 }
+
+.infos ul li{
+    font-family: 'Poppins', monospace;
+    margin-top: 30px;
+    
+    
+}
+
+.icons-infos  p{
+    margin-left: 10px;
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    bottom: 10px;
+    font-size: large;
+    
+}
+
+.icons-infos{
+    position: relative;
+    top: 30px;
+}
+
+.icons-infos  i{
+    font-size: 35px;
+    
+}
+

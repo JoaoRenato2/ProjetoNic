@@ -259,11 +259,6 @@ a {
 }
 
 .home_content {
-    display: grid;
-    grid-template-columns: 0.31fr repeat(3, 1fr) 0.31fr;
-    grid-template-rows: 0.31fr repeat(3, 1fr) 0.3fr;
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
     position: absolute;
     height: 100%;
     width: calc(100% - 78px);
@@ -282,17 +277,27 @@ a {
 /* Inicio do css do conteudo perfil */
 
 .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100% ;
+}
+
+form{
     display: grid;
     grid-template-columns: 0.21fr 1fr;
     grid-template-rows: 1fr;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
     grid-area: 2 / 2 / 5 / 5;
-
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    width: 70%;
+    height: 80%;
 }
 
 .panel-options {
+    
     border-right: solid;
     border-width: 2px;
     border-color: gainsboro;
@@ -356,12 +361,13 @@ ul {
     border: solid 1px;
     border-color: gainsboro;
     padding: 5px;
-    padding-right: 50%;
+    width: 90%;
 }
 
 .bi0-input {
-    padding: 10% !important;
-    padding-right: 141% !important;
+    height: 15vh !important;
+    width: 190% !important;
+    
 
 }
 

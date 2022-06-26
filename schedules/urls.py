@@ -3,6 +3,10 @@ from django.urls import path
 from schedules.views import Register, Login, form, scheduling, validar_cadastro, validar_login, index, Appointment_Booking, perfil, perfilSenha, calendario, sobre, cadastro,logout_view, SobreTemplateView, login_erro
 from django.views.decorators.csrf import csrf_exempt
 
+
+from django.conf import settings
+from django.conf.urls.static import static
+
 urlpatterns = [
       # Home
     path('cadastro/', cadastro, name='cadastro'),
@@ -27,4 +31,4 @@ urlpatterns = [
 
 
     
-]
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

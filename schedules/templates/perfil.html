@@ -11,6 +11,7 @@
   <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
 
 </head>
+
 <body>
   <header>
     <div class="sidebar">
@@ -77,9 +78,9 @@
             <img src="{% static '/schedules/img/profile.jpg' %}" alt="">
             <div class="name_job">
               {% if user.is_authenticated %}
-              <div class="name">{{ Usuario.get_username }}</div>
+              <div class="name">{{ user.username}}</div>
               <div class="job">Aluno</div>
-              {% endif %}   
+              {% endif %}
             </div>
           </div>
           <i class='bx bx-log-out' id="log_out"></i>
@@ -87,54 +88,51 @@
       </div>
     </div>
     <div class="home_content">
-        <form action="">
-            
-        </form>
       <div class="container">
+        <form action="">
           <div class="panel-options">
-              <ul>
-                  <li><a href=""><img class="perfil-img" src="{% static '/schedules/img/profile.jpg' %}" alt=""></a></li>
-                  <li><label class="perfil-nome" for="">Joao Renato</label></li>
-              </ul>
-              <ul class="seg-ul">
-                <li><a  href="/auth/index/perfil/">Conta</a></li>
-                <li><a  href="senha/">Senha</a></li>
-              </ul>
-           
-            
+            <ul>
+              <li><a href=""><img class="perfil-img" src="{%static '/schedules/media/media/renata-info.jpg' %}" alt=""></a></li>
+              <li><label class="perfil-nome" for="">Joao Renato</label></li>
+            </ul>
+            <ul class="seg-ul">
+              <li><a href="/auth/index/perfil/">Conta</a></li>
+              <li><a href="senha/">Senha</a></li>
+            </ul>
           </div>
           <div class="panel-changes">
             <h3>Configurações da Conta</h3>
             <div class="ladoMae">
-                <div class="lado1">
-                    <ul>
-                        <li><label for="">Primeiro Nome:</label></li>
-                        <li><input type="text" placeholder="Primeiro Nome"></li>
-                        <li><label for="">Email:</label></li>
-                        <li><input type="text" placeholder="Email"></li>
-                        <li><label for="">Curso:</label></li>
-                        <li><input type="text" placeholder="Curso"></li>
-                        <li><label for="">Bio:</label></li>
-                        <li><input class="bi0-input" type="text" placeholder="Pô mane, fala ai doidao..."></li>
-                        <ul class="ul-btn">
-                            <li><button class="btn-salva">Salvar</button></li>
-                            <li><button class="btn-cancelar">Cancelar</button></li>
-                        </ul>
-                    </ul>
-                </div>
-                <div class="lado2">
-                    <ul>
-                        <li><label for="">Sobrenome:</label></li>
-                        <li><input type="text" placeholder="Sobrenome"></li>
-                        <li><label for="">Telefone:</label></li>
-                        <li><input type="text" placeholder="Telefone"></li>
-                        <li><label for="">Período:</label></li>
-                        <li><input type="text" placeholder="Período"></li>
-                    </ul>
-                </div>
-                
+              <div class="lado1">
+                <ul>
+                  <li><label for="">Primeiro Nome:</label></li>
+                  <li><input type="text" placeholder={{ user.first_name}}></li>
+                  <li><label for="">Email:</label></li>
+                  <li><input type="text" placeholder={{ user.email}}></li>
+                  <li><label for="">Curso:</label></li>
+                  <li><input type="text" placeholder="Curso"></li>
+                  <li><label for="">Bio:</label></li>
+                  <li><input class="bi0-input" type="text" placeholder="Pô mane, fala ai doidao..."></li>
+                  <ul class="ul-btn">
+                    <li><button class="btn-salva">Salvar</button></li>
+                    <li><button class="btn-cancelar">Cancelar</button></li>
+                  </ul>
+                </ul>
+              </div>
+              <div class="lado2">
+                <ul>
+                  <li><label for="">Sobrenome:</label></li>
+                  <li><input type="text" placeholder="Sobrenome"></li>
+                  <li><label for="">Telefone:</label></li>
+                  <li><input type="text" placeholder="Telefone"></li>
+                  <li><label for="">Período:</label></li>
+                  <li><input type="text" placeholder="Período"></li>
+                </ul>
+              </div>
+  
             </div>
           </div>
+        </form>
       </div>
     </div>
   </header>
