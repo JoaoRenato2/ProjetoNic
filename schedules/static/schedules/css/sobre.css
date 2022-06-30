@@ -427,8 +427,8 @@ h3 {
 }
 
 
-.title{
-    font-family: 'Poppins',monospace;
+.title {
+    font-family: 'Poppins', monospace;
     position: relative;
     text-align: center;
     font-size: 30px;
@@ -437,8 +437,8 @@ h3 {
     width: 50%;
 }
 
-.sub-title{
-    font-family: 'Poppins',monospace;
+.sub-title {
+    font-family: 'Poppins', monospace;
     font-size: 20px;
     position: relative;
     color: grey;
@@ -450,10 +450,10 @@ h3 {
 
 }
 
-.panel3-form .img-ped{
+.panel3-form .img-ped {
     position: relative;
-    width: 100% ;
-    
+    width: 100%;
+
 }
 
 .panel3-form {
@@ -462,21 +462,21 @@ h3 {
     position: relative;
     right: 15vh;
     display: inline-block;
-    
+
 }
 
-.panel3-form p{
-    font-family: 'Poppins',monospace;
+.panel3-form p {
+    font-family: 'Poppins', monospace;
     text-align: left;
     margin-top: 10px;
     color: rgb(172, 172, 172);
 }
 
-.panel3-form h3{
+.panel3-form h3 {
     position: relative;
     top: 1vh;
     text-align: left;
-    font-family: 'Poppins',monospace;
+    font-family: 'Poppins', monospace;
     letter-spacing: normal;
     color: #000;
     font-size: 20px;
@@ -490,21 +490,21 @@ h3 {
     left: 10vh;
     top: 41px;
     display: inline-block;
-    
+
 }
 
-.panel3-form2 p{
-    font-family: 'Poppins',monospace;
+.panel3-form2 p {
+    font-family: 'Poppins', monospace;
     text-align: left;
     margin-top: 10px;
     color: rgb(172, 172, 172);
 }
 
-.panel3-form2 h3{
+.panel3-form2 h3 {
     position: relative;
     top: 1vh;
     text-align: left;
-    font-family: 'Poppins',monospace;
+    font-family: 'Poppins', monospace;
     letter-spacing: normal;
     color: #000;
     font-size: 20px;
@@ -517,11 +517,11 @@ h3 {
     position: relative;
     right: 24vh;
     display: inline-block;
-    
+
 }
 
-.panel4-form p{
-    font-family: 'Poppins',monospace;
+.panel4-form p {
+    font-family: 'Poppins', monospace;
     text-align: left;
     margin-top: 10px;
     color: rgb(172, 172, 172);
@@ -531,12 +531,12 @@ h3 {
 
 }
 
-.panel4-form h3{
+.panel4-form h3 {
     position: relative;
     top: 1vh;
     right: 4vh;
     text-align: left;
-    font-family: 'Poppins',monospace;
+    font-family: 'Poppins', monospace;
     letter-spacing: normal;
     color: #000;
     font-size: 20px;
@@ -544,11 +544,11 @@ h3 {
     width: 110%;
 }
 
-.panel4-form img{
+.panel4-form img {
     position: relative;
     right: 10vh;
     width: 170%;
-   
+
 }
 
 .panel4-form2 {
@@ -558,12 +558,12 @@ h3 {
     left: 10vh;
     top: 41px;
     display: inline-block;
-    
+
 }
 
-.panel4-form2 p{
-    font-family: 'Poppins',monospace;
-    
+.panel4-form2 p {
+    font-family: 'Poppins', monospace;
+
     position: relative;
     left: 7vh;
     bottom: 43px;
@@ -572,21 +572,21 @@ h3 {
     color: rgb(172, 172, 172);
 }
 
-.panel4-form2 h3{
+.panel4-form2 h3 {
     position: relative;
     top: 0.1vh;
     left: 7vh;
     text-align: left;
-    font-family: 'Poppins',monospace;
+    font-family: 'Poppins', monospace;
     letter-spacing: normal;
     color: #000;
     font-size: 20px;
     text-transform: none;
     margin-bottom: 45px;
-   
+
 }
 
-.panel4-form2 img{
+.panel4-form2 img {
     position: relative;
     top: 7vh;
     width: 160%;
@@ -614,11 +614,74 @@ h3 {
 .panel5 {
     height: 100vh;
     background-color: white;
+
 }
 
-.panel5 img{
-    width: 15%;
+.center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+.panel5 img {
+    width: 30%;
+}
+
+.info-prof {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    position: relative;
+    top: 10vh;
+}
+
+.panel5 .info-renata {
+    position: relative;
+    margin-right: 30px;
+}
+
+.info-renata{
+    grid-area: 1 / 1 / 4 / 4;
+   
+    text-align: right;
+    
+}
+
+.text-renata{
+    grid-area: 1 / 4 / 4 / 7;
+    width: 50%;
+    font-family: 'Poppins',monospace;
+    position: relative;
+    top: 5vh;
+
+}
+
+.info-rogerio{
+    grid-area: 4 / 1 / 7 / 4;
+
+    width: 50%;
+    font-family: 'Poppins',monospace;
+    position: relative;
+    left: 42vh;
+    top: 10vh;
+
+}
+
+.text-rogerio{
+    grid-area: 4 / 4 / 7 / 7;
+}
+
+.panel5 h2{
+    position: relative ;
+    font-size: 50px;
+    top: 10vh;
+    left: 10vh;
+   
+    font-family: 'Poppins',monospace;
+}
+
 
 
 
@@ -632,29 +695,30 @@ h3 {
     background-color: white;
 }
 
-.panel_contato{
-    
+.panel_contato {
+
     grid-area: 1 / 1 / 2 / 2;
 }
-.contato{
-   
+
+.contato {
+
     grid-area: 1 / 2 / 2 / 3;
 }
 
-.painels{
+.painels {
     position: relative;
     top: 40vh;
     left: 30vh;
-    height:60vh;
+    height: 60vh;
     width: 50vh;
     /* box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2); */
 }
 
-.painels input{
+.painels input {
     border-top: none;
     border-left: none;
     border-right: none;
-    border-bottom:  2px solid;
+    border-bottom: 2px solid;
     border-color: gainsboro;
     padding-bottom: 10px;
     margin-bottom: 30px;
@@ -665,23 +729,23 @@ h3 {
 
 }
 
-.painels button{
+.painels button {
     text-align: center;
     width: 100%;
     padding-bottom: 20px;
     border: none;
     color: white;
-    
+
     background-color: #11101d;
 }
 
-.painels h2{
-    font-family: 'Poppins',monospace;
+.painels h2 {
+    font-family: 'Poppins', monospace;
     font-size: 50px;
     letter-spacing: 3px;
 }
 
-.painels p{
+.painels p {
     font-family: 'Poppins', monospace;
     font-size: smaller;
     color: rgb(177, 176, 176);
@@ -689,35 +753,35 @@ h3 {
     margin-bottom: 20px;
 }
 
-.painels li{
+.painels li {
     text-decoration: none;
     list-style: none;
-    
+
 }
 
-.infos{
+.infos {
     position: relative;
     z-index: 2;
     bottom: 10vh;
     left: 20vh;
-    height:55vh;
+    height: 55vh;
     width: 60vh;
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
     background-color: #1d1d1f;
     color: #fff;
 }
 
-.efeito{
+.efeito {
     position: absolute;
     bottom: 390px;
     right: 430px;
-    height:6vh;
+    height: 6vh;
     width: 6vh;
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
     background-color: red;
 }
 
-.collum{
+.collum {
     position: relative;
     top: 20vh;
     left: 18px;
@@ -725,54 +789,54 @@ h3 {
     height: 100vh;
     width: 30vh;
     background-color: red;
-    
+
 }
 
-.infos,.collum{
+.infos,
+.collum {
     display: inline-block;
 }
 
-.infos ul{
+.infos ul {
     text-decoration: none;
     list-style: none;
     margin-left: 50px;
     color: rgb(192, 192, 192);
 }
 
-.infos ul li h2{
+.infos ul li h2 {
     font-family: 'Poppins', monospace;
     font-size: xx-large;
     color: #fff;
-    margin-top: 30px ;
+    margin-top: 30px;
     position: relative;
     top: 40px;
 
 }
 
-.infos ul li{
+.infos ul li {
     font-family: 'Poppins', monospace;
     margin-top: 30px;
-    
-    
+
+
 }
 
-.icons-infos  p{
+.icons-infos p {
     margin-left: 10px;
     display: inline-block;
     text-align: center;
     position: relative;
     bottom: 10px;
     font-size: large;
-    
+
 }
 
-.icons-infos{
+.icons-infos {
     position: relative;
     top: 30px;
 }
 
-.icons-infos  i{
+.icons-infos i {
     font-size: 35px;
-    
-}
 
+}

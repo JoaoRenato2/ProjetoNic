@@ -316,10 +316,7 @@ body {
 }
 
 
-.card:hover .imgBx {
-    width: 250px;
-    height: 250px;
-}
+
 .card .content {
     position: absolute;
     width: 100%;
@@ -405,4 +402,50 @@ body {
 
 #mes {
     padding: 10px 25px;
+}
+
+.painels {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    top: 40vh;
+    left: 30vh;
+    height: 30vh;
+    width: 50vh;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    
+}
+
+.painels.active{
+    display: block;
+}
+
+.painels input {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 2px solid;
+    border-color: gainsboro;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    margin-top: 10px;
+    width: 100%;
+    font-family: 'Poppins', monospace;
+    font-weight: 500;
+
+}
+
+.painels button {
+    text-align: center;
+    width: 100%;
+    padding-bottom: 20px;
+    border: none;
+    color: white;
+    background-color: #11101d;
+}
+
+.painels li {
+    text-decoration: none;
+    list-style: none;
+
 }

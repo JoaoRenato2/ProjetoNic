@@ -79,21 +79,21 @@
               {% if user.is_authenticated %}
               <div class="name">{{ user.first_name }}</div>
               <div class="job">Aluno</div>
-              {% endif %}   
+              {% endif %}
             </div>
           </div>
-          <i class='bx bx-log-out' id="log_out" ><a href="{% url 'logout' %}"></a></i>
-          
+          <i class='bx bx-log-out' id="log_out"><a href="{% url 'logout' %}"></a></i>
+
         </div>
       </div>
     </div>
     <div class="home_content">
       <div class="container">
         <div class="card">
-          <div class="imgBx" style="background-image: url('{% static '/schedules/img/renata.jpg' %}'),linear-gradient(to top, #5f72bd 0%, #9b23ea 100%);
+          <div class="imgBx" style="background-image: url('{% static '/schedules/img/Design2.png' %}'),linear-gradient(to top, #5f72bd 0%, #9b23ea 100%);
             background-size: cover;
             background-position: 50%;
-            background-position-y: 1px;
+            background-position-y: 20px;
             background-repeat: no-repeat;">
           </div>
           <div class="content">
@@ -113,15 +113,11 @@
           </div>
         </div>
         <div id="rogerio" class="card">
-          <div class="imgBx" style="background-image: url('{% static '/schedules/img/rogerio.png' %}'),linear-gradient(to top, #5f72bd 0%, #9b23ea 100%);
-            background-size: cover;
-            background-position: 50%;
-            background-position-y: 1px;
-            background-repeat: no-repeat;">
+          <div class="imgBx">
           </div>
           <div class="content">
             <div class="details">
-              <h2>Renata Santana <br><span>Professora/Pedagoga</span></h2>
+              <h2>Rogerio <br><span>Professor/Pedagogo</span></h2>
               <div class="dados">
                 <h3>100<br><span>Exex</span></h3>
                 <h3>100<br><span>Exex</span></h3>
@@ -136,12 +132,38 @@
           </div>
         </div>
       </div>
+      <div class="panel_contato">
+        <form action="{% url 'sobre_email_prof' %}" method="post">{%csrf_token%}
+          <div class="painels">
+            <ul>
+              <li>
+
+                <Input placeholder="Nome" name="name"></Input>
+              </li>
+              <li>
+
+                <Input placeholder="Email" name="email"></Input>
+
+              </li>
+              <li>
+
+                <Input placeholder="Menssagem" name="message"></Input>
+              </li>
+              <li>
+                <button>Enviar</button>
+              </li>
+            </ul>
+          </div>
+        </form>
+      </div>
     </div>
 
   </header>
   <main>
   </main>
   <script src="{% static '/schedules/js/index.js' %}"></script>
+  <script src="{% static '/schedules/js/perfil.js' %}"></script>
+
   </body>
 
 </html>

@@ -128,47 +128,73 @@
                     <div class="panel3-form">
                         <img class="img-ped" src="{% static '/schedules/img/Audiobook-bro.svg' %}" alt="">
                         <h3>Obejetivo:</h3>
-                        <p>A pedagogia Inaciana visa a formação integral do indivíduo, não só na parte acadêmica como também no desenvolvimento humano e social.</p>
+                        <p>A pedagogia Inaciana visa a formação integral do indivíduo, não só na parte acadêmica como
+                            também no desenvolvimento humano e social.</p>
                     </div>
 
                     <div class="panel3-form2">
                         <img class="img-ped1" src="{% static '/schedules/img/Processing-pana.svg' %}" alt="">
                         <h3>Metodologia:</h3>
-                        <p>Em sua metodologia, desenvolve um processo personalizado de pesquisa e construção do conhecimento, no qual o estudante, com iniciativa própria, busca aprender e se atualizar de forma independente e criativa.</p>
+                        <p>Em sua metodologia, desenvolve um processo personalizado de pesquisa e construção do
+                            conhecimento, no qual o estudante, com iniciativa própria, busca aprender e se atualizar de
+                            forma independente e criativa.</p>
 
                     </div>
-                    
+
                 </div>
-                
+
             </div>
             <div class="container_time">
                 <div class="panel4">
                     <div class="panel4-form">
                         <img class="img-ped" src="{% static '/schedules/img/Exams-bro.svg' %}" alt="">
                         <h3>Como é feita a avaliação:</h3>
-                        <p>Na prática desta metodologia de ensino, os educadores observam as diversas habilidades trabalhadas e desenvolvidas ao longo de todo o curso, promovendo a qualificação integral, buscando um currículo que faça sentido e dê sabor às suas vidas.</p>
+                        <p>Na prática desta metodologia de ensino, os educadores observam as diversas habilidades
+                            trabalhadas e desenvolvidas ao longo de todo o curso, promovendo a qualificação integral,
+                            buscando um currículo que faça sentido e dê sabor às suas vidas.</p>
                     </div>
                     <div class="panel4-form2">
                         <img class="img-ped" src="{% static '/schedules/img/Graduation-bro.svg' %}" alt="">
                         <h3>Como ela se diferencia:</h3>
-                        <p>Pedagogia Inaciana se diferencia na medida que visa formar pessoas que consigam enxergar no mundo uma possibilidade de mudança e transformação, preocupados com o meio ambiente e empáticos aos mais necessitados e aos que sofrem.</p>
+                        <p>Pedagogia Inaciana se diferencia na medida que visa formar pessoas que consigam enxergar no
+                            mundo uma possibilidade de mudança e transformação, preocupados com o meio ambiente e
+                            empáticos aos mais necessitados e aos que sofrem.</p>
                     </div>
                     <!-- <img class="img-ped" src="{% static '/schedules/img/professora.jpg' %}" alt=""> -->
                 </div>
-                
+
             </div>
             <div class="panel5">
-                <div class="info-prof">
-                    <div class="info-renta">
-                        <img  src="{% static '/schedules/img/Renata-info.png' %}" alt="">
+                <h2>Conheça o nosso time</h2>
+                <div class="center">
+                    <div class="info-prof">
+
+                        <div class="info-renata">
+                            <img src="{% static '/schedules/img/Renata-info.png' %}" alt="">
+                        </div>
+                        <div class="text-renata">
+                            <h4>Renata Santata</h4>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis accusamus eius nostrum
+                                quia enim eaque facilis sit qui molestias nobis! Tenetur officia maxime repudiandae
+                                culpa laborum voluptatem incidunt voluptas consequuntur?</p>
+                        </div>
+                        <div class="info-rogerio">
+                            <h4>Rogério Vieira</h4>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam totam doloremque voluptatem
+                            velit debitis laborum rem dignissimos ipsum voluptate quia? Harum officia sit culpa
+                            similique enim non laborum molestiae quam?
+
+                        </div>
+                        <div class="text-rogerio">
+                            <img src="{% static '/schedules/img/Rogerioinfo.png' %}" alt="">
+                        </div>
+
                     </div>
-                    <div class="info-rogerio">
-                        <img  src="{% static '/schedules/img/Rogerioinfo.png' %}" alt="">
-                    </div>
-                    
+
                 </div>
+
             </div>
-            
+
             <div class="footer">
                 <div class="contato">
                     <div class="infos">
@@ -177,61 +203,64 @@
                                 <h2>Info</h2>
                             </li>
                             <li class="icons-infos">
-                                <i class='bx bx-envelope'></i><p>nic@emge.edu.br</p>
-                                
+                                <i class='bx bx-envelope'></i>
+                                <p>nic@emge.edu.br</p>
+
                             </li>
                             <li class="icons-infos">
-                                <i class='bx bx-phone'></i></i><p>(31) 2125-8865</p>
-                                
+                                <i class='bx bx-phone'></i></i>
+                                <p>(31) 2125-8865</p>
+
                             </li>
                             <li class="icons-infos">
-                                <i class='bx bx-buildings' ></i>
+                                <i class='bx bx-buildings'></i>
                                 <p>R. Álvares Maciel, 628</p>
                             </li>
                             <li class="icons-infos">
-                                <i class='bx bx-time' ></i>
+                                <i class='bx bx-time'></i>
                                 <p>Horario de atendimento</p>
                             </li>
                         </ul>
                         <div class="efeito">
-                        
+
                         </div>
-                        
+
                     </div>
                     <div class="collum">
-                            
+
                     </div>
                 </div>
                 <div class="panel_contato">
                     <form action="{% url 'sobre_email' %}" method="post">{%csrf_token%}
                         <div class="painels">
                             <h2>Contact Us</h2>
-                            <p>Sinta-se livre para entrar em contato com a gente a qualquer hora. Iremos respoder assim que possivel!</p>
+                            <p>Sinta-se livre para entrar em contato com a gente a qualquer hora. Iremos respoder assim
+                                que possivel!</p>
                             <ul>
                                 <li>
-                                    
+
                                     <Input placeholder="Nome" name="name"></Input>
                                 </li>
                                 <li>
-                                    
+
                                     <Input placeholder="Email" name="email"></Input>
 
                                 </li>
                                 <li>
-                                    
+
                                     <Input placeholder="Menssagem" name="message"></Input>
                                 </li>
                                 <li>
                                     <button>Enviar</button>
                                 </li>
-                            </ul> 
+                            </ul>
                         </div>
                     </form>
                 </div>
 
             </div>
         </div>
-        
+
     </header>
     <script src="{% static '/schedules/js/index.js' %}"></script>
 

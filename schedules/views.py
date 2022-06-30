@@ -14,6 +14,9 @@ from django.core.mail import EmailMessage
 from django.conf import settings
 from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.views import PasswordChangeView
+from schedules.forms import (
+    EditProfileForm
+)
 
 # Create your views here.
 def home(request):
@@ -171,6 +174,36 @@ class SobreTemplateView(TemplateView):
         email.send()
         return HttpResponse("suce")
 
+
+class IndexTemplateView(TemplateView):
+    template_name: "index.html"
+
+    def post(self,request):
+        name = request.POST.get("name")
+        email = request.POST.get("email")
+        message = request.POST.get("message")
+
+        email = EmailMessage(
+            subject= f"{name} from Agendamento NIC",
+            body=message,
+            from_email=email,
+            to=['nic657246@gmail.com'],
+            reply_to=[email]
+        )
+        email.send()
+        return HttpResponse("sucesso")
+
+def edit_profile(request):
+    if request.method == 'POST':
+        form = EditProfileForm(request.POST, instance=request.user)
+
+        if form.is_valid():
+            form.save()
+            return redirect(reverse('perfil'))
+    else:
+        form = EditProfileForm(instance=request.user)
+        args = {'form': form}
+        return render(request, 'editProfile.html', args)
 
 def change_password(request):
     if request.method == 'POST':
